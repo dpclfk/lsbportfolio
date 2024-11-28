@@ -1,3 +1,186 @@
-.button {
-  height: 30px;
+body {
+  margin: 0;
+}
+P {
+  margin: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#gnb {
+  width: 100%;
+  min-width: 75rem;
+  position: fixed;
+  height: 5rem;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #1e0235;
+  color: white;
+}
+.first-div {
+  background-color: blue;
+  width: 100%;
+  min-width: 75rem;
+  display: flex;
+  justify-content: center;
+}
+
+#first-info {
+  width: 75rem;
+  background-color: blue;
+  height: 32.5rem;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;
+}
+
+#me-info {
+  color: white;
+  width: 100%;
+}
+
+#meimg,
+#me {
+  width: 24rem;
+  height: 32rem;
+}
+
+#me-info-first {
+  font-size: 3rem;
+}
+
+#me-info-second {
+  padding-top: 2rem;
+  font-size: 2rem;
+}
+
+.mini-title {
+  font-size: 3rem;
+  color: white;
+  padding-bottom: 3rem;
+}
+
+.first-contents {
+  width: 74rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.px-105rem {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.pl-1rem {
+  padding-left: 1rem;
+}
+
+.text-2rem {
+  font-size: 2rem;
+  color: white;
+}
+
+.height-1rem {
+  height: 1rem;
+}
+#Pf-div {
+  display: flex;
+  justify-content: space-between;
+}
+.Pf-contents {
+  width: 22.5rem;
+  height: 16.25rem;
+}
+.img-auto {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.Pf-info-bg {
+  background-color: white;
+  border-top: 1px dotted;
+}
+
+.Pf-title {
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+.Pf-info {
+  font-size: 1.5rem;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 50%;
+}
+
+.more-div {
+  text-align: center;
+  bottom: 1rem;
+}
+
+.skill-mini-title {
+  color: white;
+  font-size: 2.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.skill-new {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.skill-div {
+  background-color: white;
+  /* height: 5rem; */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.skill-img-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5.5rem;
+  height: 7rem;
+}
+
+.skill-img {
+  width: 5.5rem;
+  height: 5.5rem;
+}
+
+.skill-info {
+  color: black;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info {
+  display: flex;
+  font-size: 2rem;
+  color: white;
+  justify-content: space-between;
+}
+
+.w-31rem {
+  width: 31rem;
+}
+
+.w-31rem:nth-child(even) {
+  text-align: end;
 }
