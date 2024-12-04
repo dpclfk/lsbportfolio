@@ -6,42 +6,86 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <div id="gnb">
-      <div>테스트</div>
-      <div>테스트</div>
-      <div>테스트</div>
-      <div>테스트</div>
-      <div>테스트</div>
-    </div>
-    <div class="first-div">
-      <div id="first-info">
-        <div id="me-info">
-          <p id="me-info-first" class="text-center">
-            백엔드 개발자를 목표로하는 <br />주니어 개발자 이승배 입니다.
-          </p>
-          <p id="me-info-second">
-            - NestJs 프레임워크를 사용하여 백엔드 개발이 가능합니다.<br />
-            - React 라이브러리를 사용하여 프론트엔드 개발이 가능합니다.<br />
-            - 팀프로젝트의 팀장 경험으로 팀원사이의 의견 조율 및 일정관리의
-            중요성을 알고 있습니다.
-          </p>
-        </div>
-        <div id="me">
-          <img src="./img/me.jpg" alt="" id="meimg" />
+    <div id="modal-div" class="none">
+      <div id="modal-bg"></div>
+      <div id="modal">
+        <div id="modal-title" class="text-center">title</div>
+        <div id="modal-info">
+          <div>
+            <img src="./img/calc.png" alt="modal-img" id="modal-img" />
+          </div>
+          <div id="modal-text">
+            <p class="pb-8">
+              <span class="weight700">맡은 역할: </span>NestJs 및 open api RND,
+              ERD, API명세서, 시퀀스다이어그램, 프로젝트 코드 작성
+            </p>
+            <p class="pb-8">
+              <span class="weight700">기능: </span>로스트아크 오픈 api를
+              사용하여 최신화된 재료와 완제품의 가격을 DB에 저장<br />
+              MySQL을 사용하여 완제품 제작레시피 저장 및 관리<br />
+              세션을 사용하여 관리자 권한 부여
+            </p>
+            <p class="pb-8">
+              <span class="weight700">기간: </span>2024.08.23 ~ 2024.09.13
+            </p>
+            <p class="pb-8"><span class="weight700">일수: </span>21일</p>
+            <p class="pb-8"><span class="weight700">인원: </span>1명</p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="first-div">
+    <div id="gnb">
+      <div id="gnb1"><div>이승배</div></div>
+      <div id="gnb2">
+        <div>Home</div>
+        <div>About me</div>
+        <div>Project</div>
+        <div>Skill</div>
+        <div>Contact info</div>
+      </div>
+    </div>
+    <div id="visual">
+      <div id="hero">
+        <div class="hero-content">
+          <h2 class="hero-title">
+            백엔드 개발자 목표하는 주니어 개발자 이승배 입니다.
+          </h2>
+          <ul>
+            <li>NestJs 프레임워크를 사용하여 백엔드 개발이 가능합니다.</li>
+            <li>React 라이브러리를 사용하여 프론트엔드 개발이 가능합니다.</li>
+            <!-- <li>
+              팀프로젝트의 팀장 경험으로 팀원사이의 의견 조율 및 일정관리의
+              중요성을 알고 있습니다.
+            </li> -->
+          </ul>
+          <div class="button-area">
+            <button id="about-btn" class="button">About Me</button>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="hero-profile">
+            <span class="profile">
+              <img src="./img/me.jpg" alt="" class="" />
+            </span>
+          </div>
+          <div class="hero-media-illustration">
+            <img src="./static/images/hero-first.svg" />
+            <!-- <img src="./static/images/hero-second.svg" /> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="first-div op-0">
       <div id="about-me" class="first-contents">
         <div class="mini-title">About me</div>
         <div class="px-105rem">
-          <div class="text-2rem">
+          <div class="about-info">
             <span class="pl-1rem">-</span> 경일게임IT아카데미 웹 개발 과정에서
             배운 react를 사용한 웹 페이지 제작 및 Express 라이브러리를 사용하여
             백엔드 서버를 구축 가능합니다.
           </div>
           <div class="height-1rem"></div>
-          <div class="text-2rem">
+          <div class="about-info">
             <span class="pl-1rem">-</span> 웹 개발 과정에서 배운것 외에 추가로
             NestJs와 오픈api 사용법을 학습하여 프로젝트에 적용한 경험이
             있습니다.
@@ -49,48 +93,72 @@
         </div>
       </div>
     </div>
-    <div class="first-div">
-      <div id="portfolio" class="first-contents">
-        <div class="mini-title">Portfolio</div>
+    <div class="first-div op-0">
+      <div id="project" class="first-contents">
+        <div class="mini-title">Project</div>
         <div class="px-105rem">
-          <div id="Pf-div">
-            <div class="Pf">
-              <div class="Pf-contents">
-                <img src="./img/calc.png" alt="" class="img-auto" />
+          <div id="project-div">
+            <div>
+              <div class="project-title text-center pb-16">Lostark calc</div>
+              <div
+                class="project-imgcontents"
+                id="calc-bg"
+                onclick="window.open(`https://lostarkcalc.dpclfk.com`)"
+              >
+                <img src="./img/calc.png" alt="" class="project-img" />
               </div>
-              <div class="Pf-contents Pf-info-bg">
-                <div class="Pf-title">lostark calc</div>
-                <div class="Pf-info">
-                  lostark open api를 사용하여 제작및 판매시 이득금액을 계산하는
-                  사이트 제작
+              <div class="project-contents">
+                <div class="project-contents-in">
+                  <div class="project-title pb-8">Lostark calc</div>
+                  <div class="project-info">
+                    Lostark open api를 사용하여 제작및 판매시 이득금액을
+                    계산하는 사이트 제작
+                  </div>
                 </div>
                 <div class="more-div">
                   <button class="more-btn">More</button>
                 </div>
               </div>
             </div>
-            <div class="Pf">
-              <div class="Pf-contents">
-                <img src="./img/market.png" alt="" class="img-auto" />
+            <div>
+              <div class="project-title text-center pb-16">Hamster Market</div>
+              <div
+                class="project-imgcontents"
+                id="market-bg"
+                onclick="window.open(`https://market.dpclfk.com`)"
+              >
+                <img src="./img/market.png" alt="" class="project-img" />
               </div>
-              <div class="Pf-contents Pf-info-bg">
-                <div class="Pf-title">Hamster Market</div>
-                <div class="Pf-info">
-                  택배기사를 통해 동네가 아닌 전국적으로 직거래가 가능한 사이트
+              <div class="project-contents">
+                <div class="project-contents-in">
+                  <div class="project-title pb-8">Hamster Market</div>
+                  <div class="project-info">
+                    택배기사를 통해 동네가 아닌 전국적으로 직거래가 가능한
+                    사이트
+                  </div>
                 </div>
                 <div class="more-div">
                   <button class="more-btn">More</button>
                 </div>
               </div>
             </div>
-            <div class="Pf">
-              <div class="Pf-contents">
-                <img src="./img/clone.png" alt="" class="img-auto" />
+            <div>
+              <div class="project-title text-center pb-16">
+                Arcalive Clonecoding
               </div>
-              <div class="Pf-contents Pf-info-bg">
-                <div class="Pf-title">Arcalive Clonecoding</div>
-                <div class="Pf-info">
-                  하나의 커뮤니티 사이트(arcalive)를 클론코딩
+              <div
+                class="project-imgcontents"
+                id="clone-bg"
+                onclick="window.open(`https://arcaclone.dpclfk.com`)"
+              >
+                <img src="./img/clone.png" alt="" class="project-img" />
+              </div>
+              <div class="project-contents">
+                <div class="project-contents-in">
+                  <div class="project-title pb-8">Arcalive Clonecoding</div>
+                  <div class="project-info">
+                    하나의 커뮤니티 사이트(arcalive)를 클론코딩
+                  </div>
                 </div>
                 <div class="more-div">
                   <button class="more-btn">More</button>
@@ -101,7 +169,7 @@
         </div>
       </div>
     </div>
-    <div class="first-div">
+    <div class="first-div op-0">
       <div id="skill" class="first-contents">
         <div class="mini-title">Skill</div>
         <div class="px-105rem">
@@ -114,7 +182,10 @@
                   <img src="./img/JavaScript.png" alt="" class="skill-img" />
                 </div>
                 <div class="skill-info">
-                  스킬에 대한 설명이 들어갈 예정입니다.
+                  ES6이후 문법을 활용하여 코드를 작성하고, 웹 기능을 구현할수
+                  있습니다. <br />이벤트 처리, 비동기 작업(promise,
+                  async/await)을 통해 사용자의 인터랙션에 반응하는 웹
+                  애플리케이션을 개발할 수 있습니다.
                 </div>
               </div>
             </div>
@@ -123,7 +194,7 @@
         </div>
       </div>
     </div>
-    <div class="first-div">
+    <div class="first-div op-0">
       <div id="contact" class="first-contents">
         <div class="mini-title">Contact Info</div>
         <div class="px-105rem">
@@ -134,6 +205,6 @@
         </div>
       </div>
     </div>
-    <script src="index.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
