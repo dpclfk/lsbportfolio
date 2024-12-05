@@ -9,7 +9,7 @@ const morebtn3 = document.getElementsByClassName("more-btn")[2];
 
 // history.scrollRestoration = "manual";
 
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < 3; i++) {
   const observer = new IntersectionObserver(
     function callback(entries, observer) {
       entries.forEach((entry) => {
@@ -54,7 +54,7 @@ morebtn3.onclick = () => {
   // modalimg.src = "./img/clone.png";
 };
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 4; i++) {
   const gnbmove = document.getElementById("gnb2").children[i];
   const firstdiv =
     i === 0

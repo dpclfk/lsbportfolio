@@ -2,7 +2,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>LSBportfolio</title>
+    <link rel="icon" href="./img/favicon.ico" />
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
@@ -41,7 +42,7 @@
         <div>About me</div>
         <div>Project</div>
         <div>Skill</div>
-        <div>Contact info</div>
+        <!-- <div>Contact info</div> -->
       </div>
     </div>
     <div id="visual">
@@ -78,17 +79,40 @@
     <div class="first-div op-0">
       <div id="about-me" class="first-contents">
         <div class="mini-title">About me</div>
-        <div class="px-105rem">
-          <div class="about-info">
-            <span class="pl-1rem">-</span> 경일게임IT아카데미 웹 개발 과정에서
-            배운 react를 사용한 웹 페이지 제작 및 Express 라이브러리를 사용하여
-            백엔드 서버를 구축 가능합니다.
+        <div class="flex">
+          <div id="about-img">
+            <img src="./img/aboutimg.png" alt="" class="" />
           </div>
-          <div class="height-1rem"></div>
-          <div class="about-info">
-            <span class="pl-1rem">-</span> 웹 개발 과정에서 배운것 외에 추가로
-            NestJs와 오픈api 사용법을 학습하여 프로젝트에 적용한 경험이
-            있습니다.
+          <div id="about-half">
+            <ul>
+              <li class="about-info pb-1rem">
+                경일게임IT아카데미 웹 개발 과정에서 배운 react를 사용한 웹
+                페이지 제작 및 Express 라이브러리를 사용하여 백엔드 서버를 구축
+                가능합니다.
+              </li>
+              <li class="about-info pb-3rem">
+                웹 개발 과정에서 배운것 외에 추가로 NestJs와 오픈api 사용법을
+                학습하여 프로젝트에 적용한 경험이 있습니다.
+              </li>
+            </ul>
+            <div class="about-info about-contact">
+              <div>
+                <div class="pb-8 weight700">contact</div>
+                <div class="black">akdfid1@gmail.com</div>
+              </div>
+              <div>
+                <div class="pb-8 weight700">Phone</div>
+                <div class="black">010-8810-9457</div>
+              </div>
+              <div>
+                <div class="pb-8 weight700">Address</div>
+                <div class="black">경기도 안양시 (안양역 10분거리)</div>
+              </div>
+              <div>
+                <div class="pb-8 weight700">age</div>
+                <div class="black">1998년생 (만 26살)</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -96,10 +120,13 @@
     <div class="first-div op-0">
       <div id="project" class="first-contents">
         <div class="mini-title">Project</div>
-        <div class="px-105rem">
+        <div>
           <div id="project-div">
             <div>
-              <div class="project-title text-center pb-16">Lostark calc</div>
+              <div class="project-title text-center pb-16 project-toptitle">
+                <img src="./img/project/lost.ico" alt="" class="project-icon" />
+                <div>Lostark calc</div>
+              </div>
               <div
                 class="project-imgcontents"
                 id="calc-bg"
@@ -109,7 +136,7 @@
               </div>
               <div class="project-contents">
                 <div class="project-contents-in">
-                  <div class="project-title pb-8">Lostark calc</div>
+                  <div class="project-title pb-8">로스트아크 계산기</div>
                   <div class="project-info">
                     Lostark open api를 사용하여 제작및 판매시 이득금액을
                     계산하는 사이트 제작
@@ -119,9 +146,20 @@
                   <button class="more-btn">More</button>
                 </div>
               </div>
+              <div class="project-tag">
+                #NestJs, #TypeScript, #MySQL, #TypeORM, #react, #tailwindCSS
+              </div>
             </div>
             <div>
-              <div class="project-title text-center pb-16">Hamster Market</div>
+              <!-- <div class="project-title text-center pb-16">Hamster Market</div> -->
+              <div class="project-title text-center pb-16 project-toptitle">
+                <img
+                  src="./img/project/market.ico"
+                  alt=""
+                  class="project-icon"
+                />
+                <div>Hamster Market</div>
+              </div>
               <div
                 class="project-imgcontents"
                 id="market-bg"
@@ -131,7 +169,7 @@
               </div>
               <div class="project-contents">
                 <div class="project-contents-in">
-                  <div class="project-title pb-8">Hamster Market</div>
+                  <div class="project-title pb-8">햄스터 마켓</div>
                   <div class="project-info">
                     택배기사를 통해 동네가 아닌 전국적으로 직거래가 가능한
                     사이트
@@ -141,10 +179,21 @@
                   <button class="more-btn">More</button>
                 </div>
               </div>
+              <div class="project-tag">
+                #express, #TypeScript, #MySQL, #Sequelize, #MongoDB, #Mongoose
+              </div>
             </div>
             <div>
-              <div class="project-title text-center pb-16">
+              <!-- <div class="project-title text-center pb-16">
                 Arcalive Clonecoding
+              </div> -->
+              <div class="project-title text-center pb-16 project-toptitle">
+                <img
+                  src="./img/project/Arcalive_logo.svg"
+                  alt=""
+                  class="project-icon"
+                />
+                <div>Arcalive Clonecoding</div>
               </div>
               <div
                 class="project-imgcontents"
@@ -155,7 +204,7 @@
               </div>
               <div class="project-contents">
                 <div class="project-contents-in">
-                  <div class="project-title pb-8">Arcalive Clonecoding</div>
+                  <div class="project-title pb-8">아카라이브 클론코딩</div>
                   <div class="project-info">
                     하나의 커뮤니티 사이트(arcalive)를 클론코딩
                   </div>
@@ -164,37 +213,205 @@
                   <button class="more-btn">More</button>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="first-div op-0">
-      <div id="skill" class="first-contents">
-        <div class="mini-title">Skill</div>
-        <div class="px-105rem">
-          <div>
-            <div class="skill-mini-title">language</div>
-            <!-- 스킬 하나 시작 -->
-            <div class="skill-new">
-              <div class="skill-div">
-                <div class="skill-img-div">
-                  <img src="./img/JavaScript.png" alt="" class="skill-img" />
-                </div>
-                <div class="skill-info">
-                  ES6이후 문법을 활용하여 코드를 작성하고, 웹 기능을 구현할수
-                  있습니다. <br />이벤트 처리, 비동기 작업(promise,
-                  async/await)을 통해 사용자의 인터랙션에 반응하는 웹
-                  애플리케이션을 개발할 수 있습니다.
-                </div>
+              <div class="project-tag">
+                #express, #JavaScript, #MySQL, #Sequelize
               </div>
             </div>
-            <!-- 스킬 하나 끝-->
           </div>
         </div>
       </div>
     </div>
     <div class="first-div op-0">
+      <div class="first-contents">
+        <div class="mini-title">Skill</div>
+        <div>
+          <div class="skill-mini-title">Language</div>
+          <div class="skill-list">
+            <div class="skill-info">
+              <div class="skill-info-img">
+                <img src="./img/skill/JavaScript.png" alt="" />
+              </div>
+              <div class="skill-info-title">JavaScript</div>
+              <div class="skill-info-text">
+                <p>
+                  ES6이후 문법을 활용하여 코드를 작성하고, 웹 기능을 구현할수
+                  있습니다.
+                </p>
+                <p>
+                  이벤트 처리, 비동기 작업을 통해 사용자의 인터랙션에 반응하는
+                  웹 애플리케이션을 개발할 수 있습니다.
+                </p>
+              </div>
+            </div>
+            <div class="skill-info">
+              <div class="skill-info-img">
+                <img src="./img/skill/Typescript.png" alt="" />
+              </div>
+              <div class="skill-info-title">TypeScript</div>
+              <div class="skill-info-text">
+                <p>
+                  기본적인 타입 선언 및 라이브러리에 declare를 사용하여 전역
+                  변수의 타입을 정의하여 사용한 경험이 있습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="skill-mini-title">BackEnd</div>
+          <div class="skill-list">
+            <div class="skill-info">
+              <div class="skill-info-img">
+                <img src="./img/skill/NestJS.png" alt="" />
+              </div>
+              <div class="skill-info-title">NestJS</div>
+              <div class="skill-info-text">
+                <p>
+                  TypeScript와 NestJs 프레임워크를 사용하여 서버 애플리케이션
+                  개발 경험이 있습니다.
+                </p>
+                <p>
+                  NestJS의 모듈 시스템, 데코레이터 등을 활용할 수 있고, NestJS의
+                  다양한 내장 기능과 미들웨어를 이용하여 데이터 유효성
+                  검사(DTO), 예외 처리(filter) 등을 구현할 수 있습니다.
+                </p>
+              </div>
+            </div>
+            <div class="skill-info">
+              <div class="skill-info-img">
+                <img src="./img/skill/express.png" alt="" />
+              </div>
+              <div class="skill-info-title">Express</div>
+              <div class="skill-info-text">
+                <p>
+                  TypeScript 및 JavaScript를 이용하여 Express 라이브러리 기반의
+                  서버 애플리케이션 개발경험이 있습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="skill-mini-title">FrontEnd</div>
+          <div class="skill-list">
+            <div class="skill-info">
+              <div class="skill-info-img">
+                <img src="./img/skill/react.png" alt="" />
+              </div>
+              <div class="skill-info-title">React</div>
+              <div class="skill-info-text">
+                <p>
+                  JavaScript 및 TypeScript를 이용하여 react기반의 웹 페이지를
+                  구현할 수 있습니다.
+                </p>
+              </div>
+            </div>
+            <div class="skill-info">
+              <div class="skill-info-img">
+                <img src="./img/skill/tailwind.png" alt="" />
+              </div>
+              <div class="skill-info-title">Tailwind CSS</div>
+              <div class="skill-info-text">
+                <p>
+                  TailwindCSS 라이브러리를 사용하여 웹 페이지를 꾸밀수 있습니다.
+                </p>
+              </div>
+            </div>
+            <div class="skill-info">
+              <div class="skill-info-img">
+                <img src="./img/skill/HTML.png" alt="" />
+              </div>
+              <div class="skill-info-title">HTML</div>
+              <div class="skill-info-text">
+                <p>
+                  div, input등 다양한 HTML 태그를 통해 영역을 나누고, 입력을
+                  제어할수 있습니다.
+                </p>
+              </div>
+            </div>
+            <div class="skill-info">
+              <div class="skill-info-img">
+                <img src="./img/skill/CSS.png" alt="" />
+              </div>
+              <div class="skill-info-title">CSS</div>
+              <div class="skill-info-text">
+                <p>
+                  flex를 통한 반응형 웹페이지 및 animation, keyframes,
+                  transform, transition을 통한 움직이는 웹페이지를 구현할 수
+                  있습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="skill-mini-title">DataBase</div>
+          <div class="skill-list">
+            <div class="skill-info">
+              <div class="skill-info-img">
+                <img src="./img/skill/Mysql.svg" alt="" />
+              </div>
+              <div class="skill-info-title">MySQL</div>
+              <div class="skill-info-text">
+                <p>
+                  관계형 DB인 MySQL과 통신 및 ORM을 사용하여 데이터를 저장한
+                  경험이 있습니다. 또한, ORM뿐만 아니라 Query문을 사용하여
+                  데이터를 저장할 수 있습니다.
+                </p>
+              </div>
+            </div>
+            <div class="skill-info">
+              <div class="skill-info-img">
+                <img src="./img/skill/mongodb.png" alt="" />
+              </div>
+              <div class="skill-info-title">MongoDB</div>
+              <div class="skill-info-text">
+                <p>
+                  문서지향 DB인 MongoDB를 사용경험이 있으며, ODM을 사용하여
+                  스키마를 지정하여 사용할 수 있습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="skill-mini-title">Other</div>
+          <div class="skill-list">
+            <div class="skill-info">
+              <div class="skill-info-img">
+                <img src="./img/skill/AWS.png" alt="" />
+              </div>
+              <div class="skill-info-title">AWS</div>
+              <div class="skill-info-text">
+                <p>
+                  Route53에서 도메인을 구매한 경험이 있으며, EC2를 사용하여
+                  프로젝트 페이지를 배포한 경험이 있습니다.
+                </p>
+                <p>
+                  또한, 서브도메인을 통하여 하나의 EC2에서 여러 웹 페이지를
+                  배포할 수 있으며, S3를 사용하여 이미지를 저장한 경험이
+                  있습니다.
+                </p>
+              </div>
+            </div>
+            <div class="skill-info">
+              <div class="skill-info-img">
+                <img src="./img/skill/github.svg" alt="" />
+              </div>
+              <div class="skill-info-title">GitHub</div>
+              <div class="skill-info-text">
+                <p>Git을 통하여 팀원들간 협업을 한 경험이 있습니다.</p>
+                <p>
+                  또한, Github내의 gitaction 기능을 통하여 git에 코드를 올리면
+                  바로 해당 프로젝트 수정사항을 배포할 수 있습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="first-div op-0">
       <div id="contact" class="first-contents">
         <div class="mini-title">Contact Info</div>
         <div class="px-105rem">
@@ -204,7 +421,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <script src="./index.js"></script>
   </body>
 </html>
