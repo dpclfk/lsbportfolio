@@ -10,29 +10,14 @@
     <div id="modal-div" class="none">
       <div id="modal-bg"></div>
       <div id="modal">
-        <div id="modal-title" class="text-center">title</div>
+        <div id="modal-title" class="text-center"></div>
         <div id="modal-info">
           <div>
-            <img src="./img/calc.png" alt="modal-img" id="modal-img" />
+            <img src="./img/market.png" alt="projectimg" id="modal-img" />
           </div>
-          <div id="modal-text">
-            <p class="pb-8">
-              <span class="weight700">맡은 역할: </span>NestJs 및 open api RND,
-              ERD, API명세서, 시퀀스다이어그램, 프로젝트 코드 작성
-            </p>
-            <p class="pb-8">
-              <span class="weight700">기능: </span>로스트아크 오픈 api를
-              사용하여 최신화된 재료와 완제품의 가격을 DB에 저장<br />
-              MySQL을 사용하여 완제품 제작레시피 저장 및 관리<br />
-              세션을 사용하여 관리자 권한 부여
-            </p>
-            <p class="pb-8">
-              <span class="weight700">기간: </span>2024.08.23 ~ 2024.09.13
-            </p>
-            <p class="pb-8"><span class="weight700">일수: </span>21일</p>
-            <p class="pb-8"><span class="weight700">인원: </span>1명</p>
-          </div>
+          <div id="modal-text"></div>
         </div>
+        <div id="modal-exit"><button id="exit-btn">닫기</button></div>
       </div>
     </div>
     <div id="gnb">
@@ -41,7 +26,7 @@
         <div>Home</div>
         <div>About me</div>
         <div>Project</div>
-        <div>Skill</div>
+        <div>Skills</div>
         <!-- <div>Contact info</div> -->
       </div>
     </div>
@@ -135,19 +120,21 @@
                 <img src="./img/calc.png" alt="" class="project-img" />
               </div>
               <div class="project-contents">
-                <div class="project-contents-in">
-                  <div class="project-title pb-8">로스트아크 계산기</div>
-                  <div class="project-info">
-                    Lostark open api를 사용하여 제작및 판매시 이득금액을
-                    계산하는 사이트 제작
+                <div class="project-flex">
+                  <div class="project-contents-in">
+                    <div class="project-title pb-8">로스트아크 계산기</div>
+                    <div class="project-info">
+                      Lostark open api를 사용하여 제작및 판매시 이득금액을
+                      계산하는 사이트 제작
+                    </div>
+                  </div>
+                  <div class="more-div">
+                    <button class="more-btn">More</button>
                   </div>
                 </div>
-                <div class="more-div">
-                  <button class="more-btn">More</button>
+                <div class="project-tag">
+                  #NestJs, #TypeScript, #MySQL, #TypeORM, #react, #tailwindCSS
                 </div>
-              </div>
-              <div class="project-tag">
-                #NestJs, #TypeScript, #MySQL, #TypeORM, #react, #tailwindCSS
               </div>
             </div>
             <div>
@@ -168,25 +155,24 @@
                 <img src="./img/market.png" alt="" class="project-img" />
               </div>
               <div class="project-contents">
-                <div class="project-contents-in">
-                  <div class="project-title pb-8">햄스터 마켓</div>
-                  <div class="project-info">
-                    택배기사를 통해 동네가 아닌 전국적으로 직거래가 가능한
-                    사이트
+                <div class="project-flex">
+                  <div class="project-contents-in">
+                    <div class="project-title pb-8">햄스터 마켓</div>
+                    <div class="project-info">
+                      택배기사를 통해 동네가 아닌 전국적으로 직거래가 가능한
+                      사이트
+                    </div>
+                  </div>
+                  <div class="more-div">
+                    <button class="more-btn">More</button>
                   </div>
                 </div>
-                <div class="more-div">
-                  <button class="more-btn">More</button>
+                <div class="project-tag">
+                  #express, #TypeScript, #MySQL, #Sequelize, #MongoDB, #Mongoose
                 </div>
-              </div>
-              <div class="project-tag">
-                #express, #TypeScript, #MySQL, #Sequelize, #MongoDB, #Mongoose
               </div>
             </div>
             <div>
-              <!-- <div class="project-title text-center pb-16">
-                Arcalive Clonecoding
-              </div> -->
               <div class="project-title text-center pb-16 project-toptitle">
                 <img
                   src="./img/project/Arcalive_logo.svg"
@@ -203,18 +189,20 @@
                 <img src="./img/clone.png" alt="" class="project-img" />
               </div>
               <div class="project-contents">
-                <div class="project-contents-in">
-                  <div class="project-title pb-8">아카라이브 클론코딩</div>
-                  <div class="project-info">
-                    하나의 커뮤니티 사이트(arcalive)를 클론코딩
+                <div class="project-flex">
+                  <div class="project-contents-in">
+                    <div class="project-title pb-8">아카라이브 클론코딩</div>
+                    <div class="project-info">
+                      하나의 커뮤니티 사이트(arcalive)를 클론코딩
+                    </div>
+                  </div>
+                  <div class="more-div">
+                    <button class="more-btn">More</button>
                   </div>
                 </div>
-                <div class="more-div">
-                  <button class="more-btn">More</button>
+                <div class="project-tag">
+                  #express, #JavaScript, #MySQL, #Sequelize
                 </div>
-              </div>
-              <div class="project-tag">
-                #express, #JavaScript, #MySQL, #Sequelize
               </div>
             </div>
           </div>
@@ -223,7 +211,7 @@
     </div>
     <div class="first-div op-0">
       <div class="first-contents">
-        <div class="mini-title">Skill</div>
+        <div class="mini-title">Skills</div>
         <div>
           <div class="skill-mini-title">Language</div>
           <div class="skill-list">
@@ -308,7 +296,7 @@
             </div>
             <div class="skill-info">
               <div class="skill-info-img">
-                <img src="./img/skill/tailwind.png" alt="" />
+                <img src="./img/skill/tailwind.svg" alt="" />
               </div>
               <div class="skill-info-title">Tailwind CSS</div>
               <div class="skill-info-text">
