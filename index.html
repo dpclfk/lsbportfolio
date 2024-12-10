@@ -10,10 +10,15 @@
     <div id="modal-div" class="none">
       <div id="modal-bg"></div>
       <div id="modal">
-        <div id="modal-title" class="text-center"></div>
+        <div id="modal-title" class="text-center flex justify-center">
+          <div class="flex center">
+            <img src="" alt="modalprojecticon" id="modal-project-icon" />
+          </div>
+          <div id="modal-title-text"></div>
+        </div>
         <div id="modal-info">
-          <div>
-            <img src="./img/market.png" alt="projectimg" id="modal-img" />
+          <div id="modal-img">
+            <img src="" alt="projectimg" />
           </div>
           <div id="modal-text"></div>
         </div>
@@ -39,10 +44,6 @@
           <ul>
             <li>NestJs 프레임워크를 사용하여 백엔드 개발이 가능합니다.</li>
             <li>React 라이브러리를 사용하여 프론트엔드 개발이 가능합니다.</li>
-            <!-- <li>
-              팀프로젝트의 팀장 경험으로 팀원사이의 의견 조율 및 일정관리의
-              중요성을 알고 있습니다.
-            </li> -->
           </ul>
           <div class="button-area">
             <button id="about-btn" class="button">About Me</button>
@@ -51,12 +52,11 @@
         <div class="hero-media">
           <div class="hero-profile">
             <span class="profile">
-              <img src="./img/me.jpg" alt="" class="" />
+              <img src="./img/me.jpg" alt="myimage" />
             </span>
           </div>
           <div class="hero-media-illustration">
             <img src="./static/images/hero-first.svg" />
-            <!-- <img src="./static/images/hero-second.svg" /> -->
           </div>
         </div>
       </div>
@@ -64,9 +64,9 @@
     <div class="first-div op-0">
       <div id="about-me" class="first-contents">
         <div class="mini-title">About me</div>
-        <div class="flex">
+        <div class="flex center">
           <div id="about-img">
-            <img src="./img/aboutimg.png" alt="" class="" />
+            <img src="./img/aboutimg.png" alt="aboutimage" />
           </div>
           <div id="about-half">
             <ul>
@@ -109,7 +109,11 @@
           <div id="project-div">
             <div>
               <div class="project-title text-center pb-16 project-toptitle">
-                <img src="./img/project/lost.ico" alt="" class="project-icon" />
+                <img
+                  src="./img/project/lost.ico"
+                  alt="lostarkcalcicon"
+                  class="project-icon"
+                />
                 <div>Lostark calc</div>
               </div>
               <div
@@ -117,7 +121,11 @@
                 id="calc-bg"
                 onclick="window.open(`https://lostarkcalc.dpclfk.com`)"
               >
-                <img src="./img/calc.png" alt="" class="project-img" />
+                <img
+                  src="./img/calc.png"
+                  alt="lostarkcalcimage"
+                  class="project-img"
+                />
               </div>
               <div class="project-contents">
                 <div class="project-flex">
@@ -138,11 +146,10 @@
               </div>
             </div>
             <div>
-              <!-- <div class="project-title text-center pb-16">Hamster Market</div> -->
               <div class="project-title text-center pb-16 project-toptitle">
                 <img
                   src="./img/project/market.ico"
-                  alt=""
+                  alt="marketicon"
                   class="project-icon"
                 />
                 <div>Hamster Market</div>
@@ -152,7 +159,11 @@
                 id="market-bg"
                 onclick="window.open(`https://market.dpclfk.com`)"
               >
-                <img src="./img/market.png" alt="" class="project-img" />
+                <img
+                  src="./img/market.png"
+                  alt="marketimage"
+                  class="project-img"
+                />
               </div>
               <div class="project-contents">
                 <div class="project-flex">
@@ -176,7 +187,7 @@
               <div class="project-title text-center pb-16 project-toptitle">
                 <img
                   src="./img/project/Arcalive_logo.svg"
-                  alt=""
+                  alt="clonecodingincon"
                   class="project-icon"
                 />
                 <div>Arcalive Clonecoding</div>
@@ -186,7 +197,11 @@
                 id="clone-bg"
                 onclick="window.open(`https://arcaclone.dpclfk.com`)"
               >
-                <img src="./img/clone.png" alt="" class="project-img" />
+                <img
+                  src="./img/clone.png"
+                  alt="clonecodingingimage"
+                  class="project-img"
+                />
               </div>
               <div class="project-contents">
                 <div class="project-flex">
@@ -217,7 +232,7 @@
           <div class="skill-list">
             <div class="skill-info">
               <div class="skill-info-img">
-                <img src="./img/skill/JavaScript.png" alt="" />
+                <img src="./img/skill/JavaScript.png" alt="JavaScript" />
               </div>
               <div class="skill-info-title">JavaScript</div>
               <div class="skill-info-text">
@@ -233,7 +248,7 @@
             </div>
             <div class="skill-info">
               <div class="skill-info-img">
-                <img src="./img/skill/Typescript.png" alt="" />
+                <img src="./img/skill/Typescript.png" alt="TypeScript" />
               </div>
               <div class="skill-info-title">TypeScript</div>
               <div class="skill-info-text">
@@ -250,7 +265,7 @@
           <div class="skill-list">
             <div class="skill-info">
               <div class="skill-info-img">
-                <img src="./img/skill/NestJS.png" alt="" />
+                <img src="./img/skill/NestJS.png" alt="NestJS" />
               </div>
               <div class="skill-info-title">NestJS</div>
               <div class="skill-info-text">
@@ -267,7 +282,7 @@
             </div>
             <div class="skill-info">
               <div class="skill-info-img">
-                <img src="./img/skill/express.png" alt="" />
+                <img src="./img/skill/express.png" alt="express" />
               </div>
               <div class="skill-info-title">Express</div>
               <div class="skill-info-text">
@@ -284,7 +299,7 @@
           <div class="skill-list">
             <div class="skill-info">
               <div class="skill-info-img">
-                <img src="./img/skill/react.png" alt="" />
+                <img src="./img/skill/react.png" alt="react" />
               </div>
               <div class="skill-info-title">React</div>
               <div class="skill-info-text">
@@ -296,7 +311,7 @@
             </div>
             <div class="skill-info">
               <div class="skill-info-img">
-                <img src="./img/skill/tailwind.svg" alt="" />
+                <img src="./img/skill/tailwind.svg" alt="TailwindCSS" />
               </div>
               <div class="skill-info-title">Tailwind CSS</div>
               <div class="skill-info-text">
@@ -307,7 +322,7 @@
             </div>
             <div class="skill-info">
               <div class="skill-info-img">
-                <img src="./img/skill/HTML.png" alt="" />
+                <img src="./img/skill/HTML.png" alt="html" />
               </div>
               <div class="skill-info-title">HTML</div>
               <div class="skill-info-text">
@@ -319,7 +334,7 @@
             </div>
             <div class="skill-info">
               <div class="skill-info-img">
-                <img src="./img/skill/CSS.png" alt="" />
+                <img src="./img/skill/CSS.png" alt="css" />
               </div>
               <div class="skill-info-title">CSS</div>
               <div class="skill-info-text">
@@ -337,7 +352,7 @@
           <div class="skill-list">
             <div class="skill-info">
               <div class="skill-info-img">
-                <img src="./img/skill/Mysql.svg" alt="" />
+                <img src="./img/skill/Mysql.svg" alt="MySQL" />
               </div>
               <div class="skill-info-title">MySQL</div>
               <div class="skill-info-text">
@@ -350,7 +365,7 @@
             </div>
             <div class="skill-info">
               <div class="skill-info-img">
-                <img src="./img/skill/mongodb.png" alt="" />
+                <img src="./img/skill/mongodb.png" alt="MongoDB" />
               </div>
               <div class="skill-info-title">MongoDB</div>
               <div class="skill-info-text">
@@ -367,7 +382,7 @@
           <div class="skill-list">
             <div class="skill-info">
               <div class="skill-info-img">
-                <img src="./img/skill/AWS.png" alt="" />
+                <img src="./img/skill/AWS.png" alt="AWS" />
               </div>
               <div class="skill-info-title">AWS</div>
               <div class="skill-info-text">
@@ -384,7 +399,7 @@
             </div>
             <div class="skill-info">
               <div class="skill-info-img">
-                <img src="./img/skill/github.svg" alt="" />
+                <img src="./img/skill/github.svg" alt="github" />
               </div>
               <div class="skill-info-title">GitHub</div>
               <div class="skill-info-text">
