@@ -1,15 +1,18 @@
 const modaldiv = document.getElementById("modal-div");
-const modalbg = document.getElementById("modal-bg");
+const modalexit = document.querySelectorAll("#modal-bg,#exit-btn");
 const modaltitle = document.getElementById("modal-title-text");
 const modalimg = document.querySelector("#modal-img img");
 const modaltext = document.getElementById("modal-text");
-const modalexit = document.getElementById("exit-btn");
 const modalprojecticon = document.getElementById("modal-project-icon");
+const allimg = document.querySelectorAll("img");
+const gnbmove = document.getElementById("gnb2").children;
+const aboutmove = document.getElementById("about-btn");
+const movediv = document.querySelectorAll("#visual, .first-div");
 
 const morebtn = document.getElementsByClassName("more-btn");
 
-const test = document.getElementById("gnb1");
-test.onclick = () => {
+const sitetile = document.getElementById("gnb1");
+sitetile.onclick = () => {
   location.reload();
 };
 
@@ -34,15 +37,12 @@ for (let i = 0; i < 3; i++) {
   observer.observe(firstdiv);
 }
 
-modalbg.onclick = () => {
-  modaldiv.classList.add("none");
-  document.body.classList.remove("scroll-stop");
-};
-
-modalexit.onclick = () => {
-  modaldiv.classList.add("none");
-  document.body.classList.remove("scroll-stop");
-};
+modalexit.forEach((e) => {
+  e.onclick = () => {
+    modaldiv.classList.add("none");
+    document.body.classList.remove("scroll-stop");
+  };
+});
 
 morebtn[0].onclick = () => {
   modalprojecticon.src = "./img/project/lost.ico";
@@ -55,27 +55,45 @@ morebtn[0].onclick = () => {
   };
   modaltext.innerHTML = `<ul>
   <li class="pb-8">
-    <span class="weight700 modal-text-title">맡은 역할: </span
-    >NestJs 및 open api RND, ERD, API명세서, 시퀀스다이어그램,
-    프로젝트 코드 작성
+    <span class="weight700 modal-text-title">맡은 역할</span>
+    <ul class="modal-text-contents">
+      <li>
+        NestJs 및 open api RND, ERD, API명세서, 시퀀스다이어그램,
+        프로젝트 코드 작성
+      </li>
+    </ul>
   </li>
   <li class="pb-8">
-    <span class="weight700 modal-text-title">기능: </span>로스트아크
-    오픈 api를 사용하여 최신화된 재료와 완제품의 가격을 DB에 저장<br />
-    MySQL을 사용하여 완제품 제작레시피 저장 및 관리<br />
-    세션을 사용하여 관리자 권한 부여
+    <span class="weight700 modal-text-title">기능 </span>
+    <ul class="modal-text-contents">
+      <li>
+        로스트아크 오픈 api를 사용하여 최신화된 재료와 완제품의
+        가격을 DB에 저장
+      </li>
+      <li>MySQL을 사용하여 완제품 제작레시피 저장 및 관리</li>
+      <li>세션을 사용하여 관리자 권한 부여</li>
+    </ul>
   </li>
   <li class="pb-8">
-    <span class="weight700 modal-text-title">기간: </span>2024.08.23
-    ~ 2024.09.13
+    <span class="weight700 modal-text-title">기간 </span>
+    <ul class="modal-text-contents">
+      <li>22024.08.23 ~ 2024.09.13</li>
+    </ul>
   </li>
   <li class="pb-8">
-    <span class="weight700 modal-text-title">일수: </span>21일
+    <span class="weight700 modal-text-title">일수 </span>
+    <ul class="modal-text-contents">
+      <li>21일</li>
+    </ul>
   </li>
   <li class="pb-8">
-    <span class="weight700 modal-text-title">인원: </span>1명
+    <span class="weight700 modal-text-title">인원 </span>
+    <ul class="modal-text-contents">
+      <li>1명</li>
+    </ul>
   </li>
-</ul>`;
+</ul>
+`;
 };
 morebtn[1].onclick = () => {
   modalprojecticon.src = "./img/project/market.ico";
@@ -86,7 +104,7 @@ morebtn[1].onclick = () => {
     window.open(`https://market.dpclfk.com`);
   };
   modalimg.src = "./img/market.png";
-  modaltext.innerHTML = `<ul id="">
+  modaltext.innerHTML = `<ul>
   <li class="pb-8">
     <span class="weight700 modal-text-title">맡은 역할</span>
     <ul class="modal-text-contents">
@@ -125,7 +143,8 @@ morebtn[1].onclick = () => {
       <li>4명</li>
     </ul>
   </li>
-</ul>`;
+</ul>
+`;
 };
 morebtn[2].onclick = () => {
   modalprojecticon.src = "./img/project/Arcalive_logo.svg";
@@ -136,7 +155,7 @@ morebtn[2].onclick = () => {
     window.open(`https://arcaclone.dpclfk.com`);
   };
   modalimg.src = "./img/clone.png";
-  modaltext.innerHTML = `<ul id="list-none">
+  modaltext.innerHTML = `<ul>
   <li class="pb-8">
     <span class="weight700 modal-text-title">맡은 역할</span>
     <ul class="modal-text-contents">
@@ -168,24 +187,25 @@ morebtn[2].onclick = () => {
       <li>3명</li>
     </ul>
   </li>
-</ul>`;
+</ul>
+`;
 };
 
 for (let i = 0; i < 4; i++) {
-  const gnbmove = document.getElementById("gnb2").children[i];
-  const firstdiv =
-    i === 0
-      ? document.getElementById("visual")
-      : document.getElementsByClassName("first-div")[i - 1];
-
-  gnbmove.onclick = () => {
-    firstdiv.scrollIntoView({ behavior: "smooth" });
+  gnbmove[i].onclick = () => {
+    movediv[i].scrollIntoView({ behavior: "smooth" });
   };
 }
 
-const aboutmove = document.getElementById("about-btn");
-const aboutdiv = document.getElementsByClassName("first-div")[0];
-
 aboutmove.onclick = () => {
-  aboutdiv.scrollIntoView({ behavior: "smooth" });
+  movediv[1].scrollIntoView({ behavior: "smooth" });
 };
+
+allimg.forEach((e) => {
+  e.ondragstart = () => {
+    return false;
+  };
+  e.oncontextmenu = () => {
+    return false;
+  };
+});
