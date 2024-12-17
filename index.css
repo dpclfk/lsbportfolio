@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #e9edf3;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 P {
   margin: 0;
@@ -430,7 +430,7 @@ button:hover {
   box-sizing: border-box;
   padding: 2rem 1.5rem 0 1.5rem;
   width: 19rem;
-  height: 9.75rem;
+  /* height: 9.75rem; */
   background-color: #e9edf3;
   color: #6b7a90;
 }
@@ -473,6 +473,25 @@ button:hover {
 
 .project-tag {
   color: #50708b;
+}
+/* 
+.project-document {
+  padding-top: 0.25rem;
+} */
+
+.project-document > li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+.project-document-img {
+  height: 2rem;
+}
+
+.project-document-img:hover {
+  cursor: pointer;
 }
 
 .skill-mini-title {
