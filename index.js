@@ -77,7 +77,7 @@ morebtn[0].onclick = () => {
   <li class="pb-8">
     <span class="weight700 modal-text-title">기간 </span>
     <ul class="modal-text-contents">
-      <li>22024.08.23 ~ 2024.09.13</li>
+      <li>2024.08.23 ~ 2024.09.13</li>
     </ul>
   </li>
   <li class="pb-8">

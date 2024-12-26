@@ -272,12 +272,18 @@ button:hover {
 #visual > #hero > .hero-media > .hero-profile > .profile > img {
   height: inherit;
 }
-#visual > #hero > .hero-media > .hero-media-illustration {
+/* #visual > #hero > .hero-media > .hero-media-illustration {
   position: absolute;
   z-index: 1;
   top: -10%;
   left: 6.25rem;
+} */
+
+.hero-media-illustration {
+  position: absolute;
+  right: 0;
 }
+
 #gnb2 > div:hover {
   cursor: pointer;
 }
@@ -459,7 +465,9 @@ button:hover {
   bottom: 1rem;
   width: 3.5rem;
 }
-.more-btn {
+.more-btn,
+.erd-btn,
+.api-btn {
   box-sizing: border-box;
   width: 100%;
   height: 2rem;
@@ -470,6 +478,12 @@ button:hover {
   border-radius: 1.875rem;
   background: #6736dd;
 }
+.erd-btn {
+  background: #ed8506;
+}
+.api-btn {
+  background: #449925;
+}
 
 .project-tag {
   color: #50708b;
@@ -479,15 +493,27 @@ button:hover {
   padding-top: 0.25rem;
 } */
 
+.document-btn-div {
+  display: flex;
+  width: 100%;
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+}
+
 .project-document > li {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding-top: 0.25rem;
+  padding-top: 0.5rem;
 }
 
 .project-document-img {
+  box-sizing: border-box;
   height: 2rem;
+  width: 2rem;
+  border: #ffffff 0.125rem solid;
+  /* background-color: #ffffff; */
+  border-radius: 8px;
 }
 
 .project-document-img:hover {
