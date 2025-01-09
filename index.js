@@ -13,6 +13,18 @@ sitetile.onclick = () => {
   location.reload();
 };
 
+const preventDefault = (e) => {
+  e.preventDefault();
+};
+const disableScroll = () => {
+  window.addEventListener("wheel", preventDefault, { passive: false });
+  window.addEventListener("touchmove", preventDefault, { passive: false });
+};
+const ableScroll = () => {
+  window.removeEventListener("wheel", preventDefault);
+  window.removeEventListener("touchmove", preventDefault);
+};
+
 history.scrollRestoration = "manual";
 
 const observer = new IntersectionObserver(
@@ -39,6 +51,7 @@ gnbmove.forEach((e, idx) => {
     Hamburger.classList.remove("active");
     HamburgerGnb.classList.remove("show");
     HamburgerGnb.classList.add("hide");
+    ableScroll();
   };
 });
 
@@ -66,18 +79,6 @@ projectImg.forEach((e, idx) => {
     window.open(projectURI[idx]);
   };
 });
-
-function preventDefault(e) {
-  e.preventDefault();
-}
-function disableScroll() {
-  window.addEventListener("wheel", preventDefault, { passive: false });
-  window.addEventListener("touchmove", preventDefault, { passive: false });
-}
-function ableScroll() {
-  window.removeEventListener("wheel", preventDefault);
-  window.removeEventListener("touchmove", preventDefault);
-}
 
 Hamburger.onclick = (e) => {
   e.currentTarget.classList.toggle("active");

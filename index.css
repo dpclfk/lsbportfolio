@@ -665,6 +665,7 @@ button:hover {
   }
   #about-me {
     max-width: 50rem;
+    padding-left: 3rem;
   }
 }
 
