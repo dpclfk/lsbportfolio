@@ -2,37 +2,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LSBportfolio</title>
+    <title>이승배 경력기술서</title>
     <link rel="icon" href="./img/favicon.ico" />
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <div id="modal-div" class="none">
-      <div id="modal-bg"></div>
-      <div id="modal">
-        <div id="modal-title" class="text-center flex justify-center">
-          <div class="flex center">
-            <img src="" alt="modalprojecticon" id="modal-project-icon" />
-          </div>
-          <div id="modal-title-text"></div>
-        </div>
-        <div id="modal-info">
-          <div id="modal-img">
-            <img src="" alt="projectimg" />
-          </div>
-          <div id="modal-text"></div>
-        </div>
-        <div id="modal-exit"><button id="exit-btn">닫기</button></div>
-      </div>
-    </div>
     <div id="gnb">
       <div id="gnb1"><div>이승배</div></div>
-      <div id="gnb2">
-        <div>Home</div>
-        <div>About me</div>
-        <div>Projects</div>
-        <div>Skills</div>
-        <!-- <div>Contact info</div> -->
+
+      <div id="Hamburger-div">
+        <div class="Hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="gnb2" class="Hamburger-none hide">
+          <div>Home</div>
+          <div>About me</div>
+          <div>Educate</div>
+          <div>Projects</div>
+          <div>Skills</div>
+        </div>
       </div>
     </div>
     <div id="visual">
@@ -55,16 +45,13 @@
               <img src="./img/me.jpg" alt="myimage" />
             </span>
           </div>
-          <!-- <div class="hero-media-illustration">
-            <img src="./static/images/hero-first.svg" />
-          </div> -->
         </div>
         <div class="hero-media-illustration">
           <img src="./static/images/hero-first.svg" />
         </div>
       </div>
     </div>
-    <div class="first-div op-0">
+    <div id="move-about-me" class="first-div op-0">
       <div id="about-me" class="first-contents">
         <div class="mini-title">About me</div>
         <div class="flex center">
@@ -79,26 +66,28 @@
                 가능합니다.
               </li>
               <li class="about-info pb-3rem">
-                웹 개발 과정에서 배운것 외에 추가로 NestJs와 오픈api 사용법을
+                웹 개발 과정에서 배운것 외에 추가로 Nest.js와 오픈api 사용법을
                 학습하여 프로젝트에 적용한 경험이 있습니다.
               </li>
             </ul>
             <div class="about-info about-contact">
               <div>
-                <div class="pb-8 weight700">contact</div>
-                <div class="black">akdfid1@gmail.com</div>
+                <div class="pb-8 weight700">Email</div>
+                <div class="about-contact-info">akdfid1@gmail.com</div>
               </div>
               <div>
                 <div class="pb-8 weight700">Phone</div>
-                <div class="black">010-8810-9457</div>
+                <div class="about-contact-info">010-8810-9457</div>
               </div>
               <div>
                 <div class="pb-8 weight700">Address</div>
-                <div class="black">경기도 안양시 (안양역 10분거리)</div>
+                <div class="about-contact-info">
+                  경기도 안양시 (안양역 10분거리)
+                </div>
               </div>
               <div>
-                <div class="pb-8 weight700">age</div>
-                <div class="black">1998년생 (만 26살)</div>
+                <div class="pb-8 weight700">Age</div>
+                <div class="about-contact-info">1998년생 (만 26세)</div>
               </div>
             </div>
           </div>
@@ -106,229 +95,432 @@
       </div>
     </div>
     <div class="first-div op-0">
+      <div class="educate first-contents">
+        <div class="mini-title">Educate</div>
+        <div class="educate-grid">
+          <div>
+            <div class="educate-card-out-img-div">
+              <div class="educate-card-out-img-circle" id="circle-1-color">
+                <div class="educate-card-out-number">1</div>
+              </div>
+              <div class="educate-card-out-barimg" id="bar-1-color"></div>
+              <div class="educate-card-out-img out-1-color"></div>
+            </div>
+            <div class="educate-card">
+              <div class="educate-icon-bg out-1-color"></div>
+              <div class="educate-card-title" id="card-1-color">HTML, CSS</div>
+              <div class="educate-card-text">
+                HTML, CSS를 활용하여 웹페이지 꾸미기
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="educate-card-out-img-div">
+              <div class="educate-card-out-img-circle" id="circle-2-color">
+                <div class="educate-card-out-number">2</div>
+              </div>
+              <div class="educate-card-out-barimg" id="bar-2-color"></div>
+              <div class="educate-card-out-img out-2-color"></div>
+            </div>
+            <div class="educate-card">
+              <div class="educate-icon-bg out-2-color"></div>
+              <div class="educate-card-title" id="card-2-color">JavaScript</div>
+              <div class="educate-card-text">
+                JavaScript를 통해 동적인 웹페이지 구현하기
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="educate-card-out-img-div">
+              <div class="educate-card-out-img-circle" id="circle-3-color">
+                <div class="educate-card-out-number">3</div>
+              </div>
+              <div class="educate-card-out-barimg" id="bar-3-color"></div>
+              <div class="educate-card-out-img out-3-color"></div>
+            </div>
+            <div class="educate-card">
+              <div class="educate-icon-bg out-3-color"></div>
+              <div class="educate-card-title" id="card-3-color">Node.js</div>
+              <div class="educate-card-text">
+                Node.js를 통해 백엔드 서버 작성하기
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="educate-card-out-img-div">
+              <div class="educate-card-out-img-circle" id="circle-4-color">
+                <div class="educate-card-out-number">4</div>
+              </div>
+              <div class="educate-card-out-barimg" id="bar-4-color"></div>
+              <div class="educate-card-out-img out-4-color"></div>
+            </div>
+            <div class="educate-card">
+              <div class="educate-icon-bg out-4-color"></div>
+              <div class="educate-card-title" id="card-4-color">SQL</div>
+              <div class="educate-card-text">
+                데이터베이스 관리와 SQL 쿼리 작성하기
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="educate-card-out-img-div">
+              <div class="educate-card-out-img-circle" id="circle-5-color">
+                <div class="educate-card-out-number">5</div>
+              </div>
+              <div class="educate-card-out-barimg" id="bar-5-color"></div>
+              <div class="educate-card-out-img out-5-color"></div>
+            </div>
+            <div class="educate-card">
+              <div class="educate-icon-bg out-5-color"></div>
+              <div class="educate-card-title" id="card-5-color">AWS</div>
+              <div class="educate-card-text">AWS를 통한 웹페이지 배포하기</div>
+            </div>
+          </div>
+          <div>
+            <div class="educate-card-out-img-div">
+              <div class="educate-card-out-img-circle" id="circle-6-color">
+                <div class="educate-card-out-number">6</div>
+              </div>
+              <div class="educate-card-out-barimg" id="bar-6-color"></div>
+              <div class="educate-card-out-img out-6-color"></div>
+            </div>
+            <div class="educate-card">
+              <div class="educate-icon-bg out-6-color"></div>
+              <div class="educate-card-title" id="card-6-color">
+                HTML, JavaScript Project
+              </div>
+              <div class="educate-card-text">
+                HTML, CSS, JavaScript(Node.js)를 활용하여 웹페이지 제작 및 배포
+                팀프로젝트 진행
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="educate-card-out-img-div">
+              <div class="educate-card-out-img-circle" id="circle-7-color">
+                <div class="educate-card-out-number">7</div>
+              </div>
+              <div class="educate-card-out-barimg" id="bar-7-color"></div>
+              <div class="educate-card-out-img out-7-color"></div>
+            </div>
+            <div class="educate-card">
+              <div class="educate-icon-bg out-7-color"></div>
+              <div class="educate-card-title" id="card-7-color">
+                React, TypeScript
+              </div>
+              <div class="educate-card-text">
+                React 및 TypeScript를 활용하여 웹페이지 제작방법 학습
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="educate-card-out-img-div">
+              <div class="educate-card-out-img-circle" id="circle-8-color">
+                <div class="educate-card-out-number">8</div>
+              </div>
+              <div class="educate-card-out-barimg" id="bar-8-color"></div>
+              <div class="educate-card-out-img out-8-color"></div>
+            </div>
+            <div class="educate-card">
+              <div class="educate-icon-bg out-8-color"></div>
+              <div class="educate-card-title" id="card-8-color">
+                React, TypeScript Project
+              </div>
+              <div class="educate-card-text">
+                React 및 TypeScript를 활용하여 웹페이지 제작 및 배포하는
+                팀프로젝트 진행
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="educate-card-out-img-div">
+              <div class="educate-card-out-img-circle" id="circle-9-color">
+                <div class="educate-card-out-number">9</div>
+              </div>
+              <div class="educate-card-out-barimg" id="bar-9-color"></div>
+              <div class="educate-card-out-img out-9-color"></div>
+            </div>
+            <div class="educate-card">
+              <div class="educate-icon-bg out-9-color"></div>
+              <div class="educate-card-title" id="card-9-color">
+                Personal Project
+              </div>
+              <div class="educate-card-text">
+                관심있는 라이브러리 또는 프레임워크로 웹페이지 제작 및 배포하는
+                1인프로젝트 진행
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="first-div">
       <div id="project" class="first-contents">
-        <div class="mini-title">Projects</div>
-        <div>
-          <div id="project-div">
-            <div>
-              <div class="project-title text-center pb-16 project-toptitle">
+        <div class="op-0">
+          <div class="mini-title">Projects</div>
+          <div id="first-project" class="text-center pb-48 project-div">
+            <div class="project-top">
+              <div class="flex justify-center center gap8 project-title">
                 <img
                   src="./img/project/lost.ico"
-                  alt="lostarkcalcicon"
+                  alt="lostark-calc-icon"
                   class="project-icon"
                 />
-                <div>Lostark calc</div>
+                <p class="project-title-text">
+                  lostark calc(로스트아크 계산기)
+                </p>
               </div>
-              <div
-                class="project-imgcontents"
-                id="calc-bg"
-                onclick="window.open(`https://lostarkcalc.dpclfk.com`)"
-              >
-                <img
-                  src="./img/calc.png"
-                  alt="lostarkcalcimage"
-                  class="project-img"
-                />
+              <p>
+                Lostark Open API를 사용하여 가격이 최신화된 손익 계산 사이트
+                제작
+              </p>
+            </div>
+            <div class="flex project-contents">
+              <div class="project-img">
+                <img src="./img/calc.png" alt="project-calc" />
               </div>
-              <div class="project-contents">
-                <div class="project-flex">
-                  <div class="project-contents-in">
-                    <div class="project-title pb-8">로스트아크 계산기</div>
-                    <div class="project-info">
-                      Lostark open api를 사용하여 제작및 판매시 이득금액을
-                      계산하는 사이트 제작
-                    </div>
-                  </div>
-                  <div class="more-div">
-                    <button class="more-btn">More</button>
-                  </div>
-                </div>
-                <div class="project-tag">
-                  #NestJs, #TypeScript, #MySQL, #TypeORM, #react, #tailwindCSS
-                </div>
-                <div class="more-div document-btn-div">
-                  <button
-                    class="erd-btn"
-                    onclick="window.open(`https://drive.google.com/file/d/1jVKAlhvNRehDkVtRJB5hG-0g3swNYJm1/view?usp=drive_link`)"
-                  >
-                    DB ERD
-                  </button>
-                  <button
-                    class="api-btn"
-                    onclick="window.open(`https://lostarkcalc.dpclfk.com/apidocs`)"
-                  >
-                    api 명세서
-                  </button>
-                </div>
-                <!-- <div>
-                  <ul class="project-document">
+              <ul class="project-contents-list">
+                <li>
+                  <p class="weight700 project-contents-list-title">
+                    프로젝트 기간
+                  </p>
+                  <p class="pl-1rem">2024.08.23 ~ 2024.09.13 (21일)</p>
+                </li>
+                <li>
+                  <p class="weight700 project-contents-list-title">
+                    프로젝트 인원
+                  </p>
+                  <p class="pl-1rem">1명</p>
+                </li>
+                <li>
+                  <p class="weight700 project-contents-list-title">
+                    프로젝트 목적
+                  </p>
+                  <p class="pl-1rem">
+                    NestJs 및 Open API 사용을 통하여 백엔드 개발역량 향상
+                  </p>
+                </li>
+                <li>
+                  <p class="weight700 project-contents-list-title">
+                    프로젝트에서의 역할
+                  </p>
+                  <p class="pl-1rem">백엔드 및 프론트엔드</p>
+                </li>
+                <li>
+                  <p class="weight700 project-contents-list-title">
+                    프로젝트의 진행 과정
+                  </p>
+                  <ol class="pl-2rem">
                     <li>
-                      <img
-                        src="./img/project/drawio.png"
-                        alt="DB ERD"
-                        onclick="window.open(`https://drive.google.com/file/d/1jVKAlhvNRehDkVtRJB5hG-0g3swNYJm1/view?usp=drive_link`)"
-                        class="project-document-img"
-                      />
-                      <span>DB ERD </span>
-                      <div class="more-div">
-                        <button class="erd-btn">바로가기</button>
-                      </div>
+                      프로젝트 설계 : DB ERD및 API명세서 작성, NestJs RND, OPEN
+                      API RND
                     </li>
                     <li>
-                      <img
-                        src="./img/project/swagger.png"
-                        alt="api 명세서"
-                        onclick="window.open(`https://lostarkcalc.dpclfk.com/apidocs`)"
-                        class="project-document-img"
-                      />
-                      <span>api 명세서 </span>
-                      <div class="more-div">
-                        <button class="api-btn">바로가기</button>
-                      </div>
+                      프로젝트 진행 : DB ERD작성하여 DB에 어떤 데이터가 들어갈
+                      것인지 정한후, API명세서를 통해 백엔드와 프론트엔드간
+                      데이터타입 확립, NestJs RND 및 OPEN API RND
                     </li>
-                  </ul>
-                </div> -->
-              </div>
+                    <li>
+                      프로젝트 결과 : NestJs 및 OPEN API를 통해 계산기 제작
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  <p class="weight700 project-contents-list-title">
+                    프로젝트에서 획득 역량
+                  </p>
+                  <p class="pl-1rem">
+                    NestJS, TypeORM, TypeScript, React, tailwindCSS
+                  </p>
+                </li>
+              </ul>
             </div>
-            <div>
-              <div class="project-title text-center pb-16 project-toptitle">
-                <img
-                  src="./img/project/market.ico"
-                  alt="marketicon"
-                  class="project-icon"
-                />
-                <div>Hamster Market</div>
-              </div>
-              <div
-                class="project-imgcontents"
-                id="market-bg"
-                onclick="window.open(`https://market.dpclfk.com`)"
-              >
-                <img
-                  src="./img/market.png"
-                  alt="marketimage"
-                  class="project-img"
-                />
-              </div>
-              <div class="project-contents">
-                <div class="project-flex">
-                  <div class="project-contents-in">
-                    <div class="project-title pb-8">햄스터 마켓</div>
-                    <div class="project-info">
-                      택배기사를 통해 동네가 아닌 전국적으로 직거래가 가능한
-                      사이트
-                    </div>
-                  </div>
-                  <div class="more-div">
-                    <button class="more-btn">More</button>
-                  </div>
-                </div>
-                <div class="project-tag">
-                  #express, #TypeScript, #MySQL, #Sequelize, #MongoDB, #Mongoose
-                </div>
-                <div class="more-div document-btn-div">
-                  <button
-                    class="erd-btn"
-                    onclick="window.open(`https://drive.google.com/file/d/1MSiiRCd9-8AS1rhRiQObKxZ-xRExgfgc/view?usp=drive_link`)"
-                  >
-                    DB ERD
-                  </button>
-                  <button
-                    class="api-btn"
-                    onclick="window.open(`https://docs.google.com/spreadsheets/d/1OqvLUIwUtq1BeYnqO15Gkd7SHeAt0braCZV7ZNkaQ04/edit?usp=sharing`)"
-                  >
-                    api 명세서
-                  </button>
-                </div>
-              </div>
+          </div>
+        </div>
+        <div id="second-project" class="text-center pb-48 project-div op-0">
+          <div class="project-top">
+            <div class="flex justify-center center gap8 project-title">
+              <img
+                src="./img/project/market.ico"
+                alt="market-icon"
+                class="project-icon"
+              />
+              <p class="project-title-text">Hamster Market(햄스터 마켓)</p>
             </div>
-            <div>
-              <div class="project-title text-center pb-16 project-toptitle">
-                <img
-                  src="./img/project/Arcalive_logo.svg"
-                  alt="clonecodingincon"
-                  class="project-icon"
-                />
-                <div>Arcalive Clonecoding</div>
-              </div>
-              <div
-                class="project-imgcontents"
-                id="clone-bg"
-                onclick="window.open(`https://arcaclone.dpclfk.com`)"
-              >
-                <img
-                  src="./img/clone.png"
-                  alt="clonecodingingimage"
-                  class="project-img"
-                />
-              </div>
-              <div class="project-contents">
-                <div class="project-flex">
-                  <div class="project-contents-in">
-                    <div class="project-title pb-8">아카라이브 클론코딩</div>
-                    <div class="project-info">
-                      하나의 커뮤니티 사이트(arcalive)를 클론코딩
-                    </div>
-                  </div>
-                  <div class="more-div">
-                    <button class="more-btn">More</button>
-                  </div>
-                </div>
-                <div class="project-tag">
-                  #express, #JavaScript, #MySQL, #Sequelize
-                </div>
-                <div class="more-div document-btn-div">
-                  <button
-                    class="erd-btn"
-                    onclick="window.open(`https://drive.google.com/file/d/11skTyM0pR2ByXKuABK02fsSRrsKqUtFo/view?usp=drive_link`)"
-                  >
-                    DB ERD
-                  </button>
-                  <button
-                    class="api-btn"
-                    onclick="window.open(`https://docs.google.com/spreadsheets/d/1Cw0NxTsMqvUi5bGCaZNTkhQtU6qdvIt7kyk2NAfa8AQ/edit?usp=sharing`)"
-                  >
-                    api 명세서
-                  </button>
-                </div>
-              </div>
+            <p>택배기사를 통해 전국적인 1:1 직거래 사이트 제작</p>
+          </div>
+          <div class="flex project-contents">
+            <div class="project-img">
+              <img src="./img/market.png" alt="project-market" />
             </div>
+            <ul class="project-contents-list">
+              <li>
+                <p class="weight700 project-contents-list-title">
+                  프로젝트 기간
+                </p>
+                <p class="pl-1rem">2024.07.05 ~ 2024.08.05 (31일)</p>
+              </li>
+              <li>
+                <p class="weight700 project-contents-list-title">
+                  프로젝트 인원
+                </p>
+                <p class="pl-1rem">4명</p>
+              </li>
+              <li>
+                <p class="weight700 project-contents-list-title">
+                  프로젝트 목적
+                </p>
+                <p class="pl-1rem">
+                  개발자가아닌 외부인원의 목적에 맞춰 사이트 제작, OAuth2.0 RND,
+                  TypeScript를 이용한 백엔드 역량 향상, React를 활용한
+                  프론트엔드 역량 향상
+                </p>
+              </li>
+              <li>
+                <p class="weight700 project-contents-list-title">
+                  프로젝트에서의 역할
+                </p>
+                <p class="pl-1rem">백엔드</p>
+              </li>
+              <li>
+                <p class="weight700 project-contents-list-title">
+                  프로젝트의 진행 과정
+                </p>
+                <ol class="pl-2rem">
+                  <li>
+                    프로젝트 설계 : DB ERD및 API명세서 작성, OAuth 2.0 RND,
+                    프로젝트 인원 배분
+                  </li>
+                  <li>
+                    프로젝트 진행 : DB ERD작성하여 DB에 어떤 데이터가 들어갈
+                    것인지 정한후, API명세서를 통해 백엔드와 프론트엔드간
+                    데이터타입 확립, OAuth2.0 RND하여 프로젝트에 적용
+                  </li>
+                  <li>
+                    프로젝트 결과 : OAuth2.0을 활용한 로그인구현, TypeScript를
+                    통한 백엔드 서버 구현
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p class="weight700 project-contents-list-title">
+                  프로젝트에서 획득 역량
+                </p>
+                <p class="pl-1rem">TypeScript, Express.js, MySQL, MongoDB</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="third-project" class="text-center project-div op-0">
+          <div class="project-top">
+            <div class="flex justify-center center gap8 project-title">
+              <img
+                src="./img/project/Arcalive_logo.svg"
+                alt="Arcalive_logo"
+                class="project-icon"
+              />
+              <p class="project-title-text">
+                Arcalive Clonecoding(아카라이브 클론코딩)
+              </p>
+            </div>
+            <p>하나의 커뮤니티 사이트를 클론코딩</p>
+          </div>
+          <div class="flex project-contents">
+            <div class="project-img">
+              <img src="./img/clone.png" alt="project-clone-coding" />
+            </div>
+            <ul class="project-contents-list">
+              <li>
+                <p class="weight700 project-contents-list-title">
+                  프로젝트 기간
+                </p>
+                <p class="pl-1rem">2024.05.20 ~ 2024.06.04 (15일)</p>
+              </li>
+              <li>
+                <p class="weight700 project-contents-list-title">
+                  프로젝트 인원
+                </p>
+                <p class="pl-1rem">3명</p>
+              </li>
+              <li>
+                <p class="weight700 project-contents-list-title">
+                  프로젝트 목적
+                </p>
+                <p class="pl-1rem">
+                  Express.js를 활용한 백엔드 역량향상, HTML과 CSS를 활용하여
+                  프론트엔드 역량 향상
+                </p>
+              </li>
+              <li>
+                <p class="weight700 project-contents-list-title">
+                  프로젝트에서의 역할
+                </p>
+                <p class="pl-1rem">백엔드</p>
+              </li>
+              <li>
+                <p class="weight700 project-contents-list-title">
+                  프로젝트의 진행 과정
+                </p>
+                <ol class="pl-2rem">
+                  <li>
+                    프로젝트 설계 : DB ERD 작성, 프론트엔드 및 백엔드의 일자별
+                    작업플랜 확립
+                  </li>
+                  <li>
+                    프로젝트 진행 : DB ERD작성하여 DB에 어떤 데이터가 들어갈
+                    것인지 정한후 작업 플랜에따라 프로젝트 진행
+                  </li>
+                  <li>
+                    프로젝트 결과 : Express.js를 활용한 백엔드 서버 구현 및
+                    HTML, CSS를 통한 웹페이지 구현
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p class="weight700 project-contents-list-title">
+                  프로젝트에서 획득 역량
+                </p>
+                <p class="pl-1rem">Express.js, JavaScript, MySQL</p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="first-div op-0">
+    <div class="first-div">
       <div class="first-contents">
-        <div class="mini-title">Skills</div>
-        <div>
-          <div class="skill-mini-title">Language</div>
-          <div class="skill-list">
-            <div class="skill-info">
-              <div class="skill-info-img">
-                <img src="./img/skill/JavaScript.png" alt="JavaScript" />
+        <div class="op-0">
+          <div class="mini-title">Skills</div>
+          <div>
+            <div class="skill-mini-title">Language</div>
+            <div class="skill-list">
+              <div class="skill-info">
+                <div class="skill-info-img">
+                  <img src="./img/skill/JavaScript.png" alt="JavaScript" />
+                </div>
+                <div class="skill-info-title">JavaScript</div>
+                <div class="skill-info-text">
+                  <p>
+                    ES6이후 문법을 활용하여 코드를 작성하고, 웹 기능을 구현할수
+                    있습니다.
+                  </p>
+                  <p>
+                    이벤트 처리, 비동기 작업을 통해 사용자의 인터랙션에 반응하는
+                    웹 애플리케이션을 개발할 수 있습니다.
+                  </p>
+                </div>
               </div>
-              <div class="skill-info-title">JavaScript</div>
-              <div class="skill-info-text">
-                <p>
-                  ES6이후 문법을 활용하여 코드를 작성하고, 웹 기능을 구현할수
-                  있습니다.
-                </p>
-                <p>
-                  이벤트 처리, 비동기 작업을 통해 사용자의 인터랙션에 반응하는
-                  웹 애플리케이션을 개발할 수 있습니다.
-                </p>
-              </div>
-            </div>
-            <div class="skill-info">
-              <div class="skill-info-img">
-                <img src="./img/skill/Typescript.png" alt="TypeScript" />
-              </div>
-              <div class="skill-info-title">TypeScript</div>
-              <div class="skill-info-text">
-                <p>
-                  기본적인 타입 선언 및 라이브러리에 declare를 사용하여 전역
-                  변수의 타입을 정의하여 사용한 경험이 있습니다.
-                </p>
+              <div class="skill-info">
+                <div class="skill-info-img">
+                  <img src="./img/skill/Typescript.png" alt="TypeScript" />
+                </div>
+                <div class="skill-info-title">TypeScript</div>
+                <div class="skill-info-text">
+                  <p>
+                    기본적인 타입 선언 및 라이브러리에 declare를 사용하여 전역
+                    변수의 타입을 정의하여 사용한 경험이 있습니다.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -367,7 +559,7 @@
             </div>
           </div>
         </div>
-        <div>
+        <div class="op-0">
           <div class="skill-mini-title">FrontEnd</div>
           <div class="skill-list">
             <div class="skill-info">
@@ -420,7 +612,7 @@
             </div>
           </div>
         </div>
-        <div>
+        <div class="op-0">
           <div class="skill-mini-title">DataBase</div>
           <div class="skill-list">
             <div class="skill-info">
@@ -450,7 +642,7 @@
             </div>
           </div>
         </div>
-        <div>
+        <div class="op-0">
           <div class="skill-mini-title">Other</div>
           <div class="skill-list">
             <div class="skill-info">
@@ -487,17 +679,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="first-div op-0">
-      <div id="contact" class="first-contents">
-        <div class="mini-title">Contact Info</div>
-        <div class="px-105rem">
-          <div class="contact-info">
-            <div class="w-31rem">Phone</div>
-            <div class="w-31rem">010-8810-9457</div>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <script src="./index.js"></script>
   </body>
 </html>
