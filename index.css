@@ -485,6 +485,10 @@ button:hover {
   font-weight: 600;
 }
 
+#about-github:hover {
+  cursor: pointer;
+}
+
 .pb-1rem {
   padding-bottom: 1rem;
 }
