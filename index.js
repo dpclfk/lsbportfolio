@@ -7,7 +7,9 @@ const projectImg = document.querySelectorAll(".project-img > img");
 const op0 = document.querySelectorAll(".op-0");
 const Hamburger = document.querySelector(".Hamburger");
 const HamburgerGnb = document.querySelector("#gnb2");
-const guthub = document.querySelectorAll(".githubicon > img:first-child");
+const guthub = document.querySelectorAll(
+  ".project-doc-icons > img:first-child"
+);
 const apidocs = document.querySelectorAll(".api-docs");
 
 // 로고 클릭시 새로고침

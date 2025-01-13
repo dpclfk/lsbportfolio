@@ -554,18 +554,18 @@ button:hover {
   -moz-box-shadow: 0px 0px 20px -2px rgba(0, 0, 0, 0.5);
 }
 
-.githubicon {
+.project-doc-icons {
   height: 2rem;
   padding-top: 0.5rem;
   display: flex;
   gap: 0.5rem;
 }
 
-.githubicon > img {
+.project-doc-icons > img {
   height: 100%;
 }
 
-.githubicon > img:hover {
+.project-doc-icons > img:hover {
   cursor: pointer;
   transition: transform 0.1s ease-out;
   transform: scale(1.2);
@@ -743,7 +743,6 @@ button:hover {
     flex-direction: column;
     gap: 0.5rem;
   }
-
   .project-img {
     width: auto;
     display: flex;
@@ -752,6 +751,9 @@ button:hover {
   }
   .project-img > img {
     width: 50%;
+  }
+  .project-doc-icons {
+    flex-direction: column;
   }
   .project-contents-list {
     width: auto;
