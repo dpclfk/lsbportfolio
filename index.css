@@ -67,6 +67,10 @@ button:hover {
   text-align: center;
 }
 
+.scale10 {
+  scale: 1.1;
+}
+
 #gnb {
   box-sizing: border-box;
   width: 100%;
@@ -529,15 +533,10 @@ button:hover {
 .project-contents {
   position: relative;
   justify-content: space-between;
-  /* justify-content: end; */
   padding: 1rem;
   align-items: center;
 }
 
-/* 현재 수정중인곳 */
-/* .project-img {
-  width: 42%;
-} */
 .project-img {
   width: 48%;
 }
@@ -557,13 +556,13 @@ button:hover {
 
 .githubicon {
   height: 2rem;
-  width: 2rem;
   padding-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .githubicon > img {
   height: 100%;
-  width: 100%;
 }
 
 .githubicon > img:hover {
@@ -575,17 +574,9 @@ button:hover {
 .project-contents-list {
   list-style: none;
   width: 50%;
-
-  /* position: absolute;
-  right: 0%;
-  width: 35%; */
-
   text-align: start;
   color: #6b7a90;
-  /* background-color: #e9edf3; */
   padding: 0px 0.5rem 0.5rem 0.5rem;
-
-  /* border: #95abe6 0.0625rem solid; */
   border-radius: 0.25rem;
 }
 

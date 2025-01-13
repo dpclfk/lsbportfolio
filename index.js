@@ -3,11 +3,12 @@ const gnbmove = document.querySelectorAll("#gnb2 > *");
 const aboutmove = document.getElementById("about-btn");
 const movediv = document.querySelectorAll("#visual,.first-div");
 const moveAboutMe = document.getElementById("move-about-me");
-const projectImg = document.querySelectorAll(".project-img");
+const projectImg = document.querySelectorAll(".project-img > img");
 const op0 = document.querySelectorAll(".op-0");
 const Hamburger = document.querySelector(".Hamburger");
 const HamburgerGnb = document.querySelector("#gnb2");
-const guthub = document.querySelectorAll(".githubicon > img");
+const guthub = document.querySelectorAll(".githubicon > img:first-child");
+const apidocs = document.querySelectorAll(".api-docs");
 
 // 로고 클릭시 새로고침
 const sitetile = document.getElementById("gnb1");
@@ -96,6 +97,15 @@ const GuthubURI = [
 guthub.forEach((e, idx) => {
   e.onclick = () => {
     window.open(GuthubURI[idx]);
+  };
+});
+
+// api 명세서(문서)페이지로 이동
+const ApiURI = ["https://lostarkcalc.dpclfk.com/apidocs"];
+
+apidocs.forEach((e, idx) => {
+  e.onclick = () => {
+    window.open(ApiURI[idx]);
   };
 });
 
