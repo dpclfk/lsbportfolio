@@ -55,8 +55,16 @@ button:hover {
   font-weight: 700;
 }
 
-.pb-48 {
-  padding-bottom: 5rem;
+.pb-40 {
+  padding-bottom: 2.5rem;
+}
+
+.py-40 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.pt-40 {
+  padding-top: 2.5rem;
 }
 
 .gap8 {
@@ -505,8 +513,12 @@ button:hover {
   font-weight: 500;
 }
 
+#first-project,
+#second-project {
+  border-bottom: #90a5c414 0.25rem solid;
+}
+
 .project-top {
-  border-bottom: #90a5c414 2px solid;
   padding: 0.5rem 0px 0.5rem 0px;
 }
 
