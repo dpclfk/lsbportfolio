@@ -506,7 +506,7 @@ button:hover {
 }
 
 .project-top {
-  border: #a08dee 1px solid;
+  border-bottom: #90a5c414 2px solid;
   padding: 0.5rem 0px 0.5rem 0px;
 }
 
@@ -535,6 +535,7 @@ button:hover {
   justify-content: space-between;
   padding: 1rem;
   align-items: center;
+  gap: 1rem;
 }
 
 .project-img {
