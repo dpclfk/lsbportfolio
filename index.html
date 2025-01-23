@@ -5,11 +5,95 @@
     <title>이승배 경력기술서</title>
     <link rel="icon" href="./img/favicon.ico" />
     <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
   </head>
   <body>
+    <div id="modal" class="none">
+      <div id="modal-bg"></div>
+      <div class="mac">
+        <div class="mac-toolbar">
+          <span class="mac-button red">x</span>
+          <span class="mac-button yellow"></span>
+          <span class="mac-button green"></span>
+        </div>
+        <div id="modal-contents">
+          <p>로스트아크 거래소 API의 응답 내용을 기반으로 DB ERD 설계</p>
+          <div class="modal-img-content flex center">
+            <img src="./img/project/modal/calc/res.png" alt="" />
+            <img src="./img/project/modal/calc/erd.png" alt="" />
+          </div>
+          <p>
+            로스트아크 거래소 API의 요청 방식을 따라 Body에 정보를 포함하여 요청
+          </p>
+          <div class="modal-img-content flex center">
+            <img src="./img/project/modal/calc/req.png" alt="" />
+          </div>
+          <pre><code class="language-typescript">
+const lostLink = axios.create({
+  baseURL: 'https://developer-lostark.game.onstove.com/',
+  headers: {
+    'Content-Type': 'application/json',
+    accept: 'application/json',
+    authorization: `${this.configService.get&ltstring&gt(`LOSTAPI`)}`,
+    },
+  });// OPEN API 요청 시 공통적인 부분을 변수로 선언
+
+const reqApi = await lostLink.post( // 거래소에서 최신 정보를 가져오는 코드
+  'markets/items', // baseURL에 추가로 붙는 URL
+  {
+    Sort: 'GRADE',
+    CategoryCode: 60000,
+    CharacterClass: '',
+    ItemTier: null,
+    ItemGrade: '',
+    ItemName: '',
+    PageNo: i,
+    SortCondition: 'ASC',
+  }, // Body에 포함될 내용
+);
+
+reqApi.data.Items.map(
+  (item: Item) => marketApiUpdate(item),
+); // API 정보를 DB에 저장하는 함수를 호출</code></pre>
+          <p>응답 데이터를 DB에 저장</p>
+          <pre><code class="language-typescript">
+const marketApiUpdate = async (item: Item) => {
+  let icon: Icon = this.iconRepository.create({ // 아이콘 이미지는 별도로 호출하는 경우가 많아 다른 테이블에 저장
+    icon: item.Icon.slice(
+      'https://cdn-lostark.game.onstove.com/efui_iconatlas/'.length,
+    ),
+    itemCode: item.Id,
+  });
+  try {
+    await this.iconRepository.save(icon);
+  } catch (err) {
+    icon = await this.iconRepository.findOne({ where: icon });
+  }
+  try {
+    const market: Market = this.marketRepository.create({
+      name: item.Name,
+      itemCode: item.Id,
+      bundle: item.BundleCount,
+      currentMinPrice: item.CurrentMinPrice,
+      recentPrice: item.RecentPrice,
+      yDayAvgPrice: item.YDayAvgPrice,
+      icon: icon,
+      patchable: false,
+    });
+    await this.marketRepository.upsert(market, []);
+  } catch (err) {} // 값이 변경되지 않은 상태에서 업데이트를 시도하면 오류가 발생할 수 있으므로, catch를 사용해 서버 중단을 방지
+};</code>
+        </pre>
+        </div>
+      </div>
+    </div>
     <div id="gnb">
       <div id="gnb1"><div>이승배</div></div>
-
       <div id="Hamburger-div">
         <div class="Hamburger">
           <span></span>
@@ -288,13 +372,25 @@
             <div class="flex project-contents">
               <div class="project-img">
                 <img src="./img/calc.png" alt="project-calc" />
-                <div class="project-doc-icons">
-                  <img src="./img/skill/github.svg" alt="" />
-                  <img
-                    src="./img/project/swagger.svg"
-                    alt=""
-                    class="api-docs scale10"
-                  />
+                <div class="flex justify-between img-bottom">
+                  <div class="project-doc-icons">
+                    <img src="./img/skill/github.svg" alt="" />
+                    <img
+                      src="./img/project/swagger.svg"
+                      alt=""
+                      class="api-docs scale10"
+                    />
+                  </div>
+                  <div class="core-code">
+                    <div>
+                      <div>Core Code</div>
+                      <img
+                        src="./img/project/click.png"
+                        alt=""
+                        class="click-img"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
               <ul class="project-contents-list">
@@ -716,5 +812,6 @@
       </div>
     </div>
     <script src="./index.js"></script>
+    <script src="./modal.js"></script>
   </body>
 </html>

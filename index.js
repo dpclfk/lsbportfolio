@@ -1,16 +1,16 @@
-const allimg = document.querySelectorAll("img");
-const gnbmove = document.querySelectorAll("#gnb2 > *");
-const aboutmove = document.getElementById("about-btn");
-const movediv = document.querySelectorAll("#visual,.first-div");
+const allImg = document.querySelectorAll("img");
+const gnbMove = document.querySelectorAll("#gnb2 > *");
+const aboutMove = document.getElementById("about-btn");
+const moveDiv = document.querySelectorAll("#visual,.first-div");
 const moveAboutMe = document.getElementById("move-about-me");
 const projectImg = document.querySelectorAll(".project-img > img");
 const op0 = document.querySelectorAll(".op-0");
 const Hamburger = document.querySelector(".Hamburger");
 const HamburgerGnb = document.querySelector("#gnb2");
-const guthub = document.querySelectorAll(
+const gitHub = document.querySelectorAll(
   ".project-doc-icons > img:first-child"
 );
-const apidocs = document.querySelectorAll(".api-docs");
+const apiDocs = document.querySelectorAll(".api-docs");
 
 // 로고 클릭시 새로고침
 const sitetile = document.getElementById("gnb1");
@@ -53,9 +53,9 @@ const observer = new IntersectionObserver(
 op0.forEach((e) => {
   observer.observe(e);
 });
-gnbmove.forEach((e, idx) => {
+gnbMove.forEach((e, idx) => {
   e.onclick = () => {
-    movediv[idx].scrollIntoView({ behavior: "smooth" });
+    moveDiv[idx].scrollIntoView({ behavior: "smooth" });
     Hamburger.classList.remove("active");
     HamburgerGnb.classList.remove("show");
     HamburgerGnb.classList.add("hide");
@@ -64,12 +64,12 @@ gnbmove.forEach((e, idx) => {
 });
 
 // about me 버튼클릭시 about me로 이동
-aboutmove.onclick = () => {
+aboutMove.onclick = () => {
   moveAboutMe.scrollIntoView({ behavior: "smooth" });
 };
 
 // 이미지 드래그, 우클릭 안되게
-allimg.forEach((e) => {
+allImg.forEach((e) => {
   e.ondragstart = () => {
     return false;
   };
@@ -91,21 +91,21 @@ projectImg.forEach((e, idx) => {
 });
 
 //깃허브 클릭시 깃허브 페이지로 이동
-const GuthubURI = [
+const gitHubURI = [
   "https://github.com/dpclfk/lostarkcalc",
   "https://github.com/dpclfk/TeamHamster",
   "https://github.com/dpclfk/mayteamproject/tree/dev",
 ];
-guthub.forEach((e, idx) => {
+gitHub.forEach((e, idx) => {
   e.onclick = () => {
-    window.open(GuthubURI[idx]);
+    window.open(gitHubURI[idx]);
   };
 });
 
 // api 명세서(문서)페이지로 이동
 const ApiURI = ["https://lostarkcalc.dpclfk.com/apidocs"];
 
-apidocs.forEach((e, idx) => {
+apiDocs.forEach((e, idx) => {
   e.onclick = () => {
     window.open(ApiURI[idx]);
   };
