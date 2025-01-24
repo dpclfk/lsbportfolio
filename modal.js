@@ -13,7 +13,7 @@ modalContents.addEventListener(
     const { scrollTop, scrollHeight, clientHeight } = modalContents;
     if (
       (scrollTop <= 0 && e.deltaY < 0) ||
-      (scrollTop + clientHeight + 0.5 >= scrollHeight && e.deltaY > 0)
+      (scrollTop + clientHeight + 1 >= scrollHeight && e.deltaY > 0)
     ) {
       e.preventDefault();
     }
@@ -167,7 +167,54 @@ const userInfoResponse = await (
     },
   })
 ).data.response;
-</code></pre>`,
+</code>
+</pre>`,
+  `
+<p>Sequelize를 사용하여 데이터베이스에 연결</p>
+<pre><code class="language-javascript">export const sequelize = new Sequelize(
+  config.database,
+  config.username,
+  config.password,
+  config
+);
+ </code></pre>
+<p>Sequelize를 사용하여 데이터베이스 테이블 생성</p>
+<pre><code>
+export const Board = BoardModel.init(sequelize);
+export const BoardLike = BoardLikeModel.init(sequelize);
+export const BoardDislike = BoardDislikeModel.init(sequelize);
+export const Comment = CommentModel.init(sequelize);
+ </code></pre>
+<p>테이블에서 관계를 맺기위한 코드</p>
+<pre><code>
+const db = {
+  Board,
+  BoardLike,
+  BoardDislike,
+  Comment,
+};
+
+
+Object.keys(db).forEach((model) => {
+  db[model].associate(db);
+});
+
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+ </code></pre>
+<p>각 테이블 별 관계를 맺기위한 코드</p>
+<pre><code>
+static associate({ User, Board, Category, BoardLike, Comment, BoardDislike, Channel }) {
+  Board.hasMany(BoardLike, { foreignKey: "boardId" });
+  Board.hasMany(BoardDislike, { foreignKey: "boardId" });
+  Board.hasMany(Comment, { foreignKey: "boardId" });
+  
+  Board.belongsTo(User, { foreignKey: "userId" });
+  Board.belongsTo(Category, { foreignKey: "categoryId" });
+  Board.belongsTo(Channel, { foreignKey: "channelId" });
+}
+</code>
+</pre>`,
 ];
 
 coreCode.forEach((e, idx) => {
