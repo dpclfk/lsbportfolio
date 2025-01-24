@@ -691,7 +691,7 @@ img {
   gap: 0.25rem;
   border-radius: 0.5rem;
   padding: 0.4rem;
-  background-color: #d1d8e2d1;
+  background-color: #a5d1b9d1;
   color: #4c5666;
   font-weight: 600;
 }
@@ -976,9 +976,14 @@ img {
   #gnb2.hide {
     transform: translateX(100%);
   }
-
-  /* .project-doc-icons > img {
-    width: 1.25rem;
-    height: 1.25rem;
-  } */
+  .core-code {
+    font-size: 0.75rem;
+  }
+  .click-img {
+    height: 1rem;
+  }
+  .project-doc-icons > img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
