@@ -13,7 +13,7 @@ modalContents.addEventListener(
     const { scrollTop, scrollHeight, clientHeight } = modalContents;
     if (
       (scrollTop <= 0 && e.deltaY < 0) ||
-      (scrollTop + clientHeight >= scrollHeight && e.deltaY > 0)
+      (scrollTop + clientHeight + 0.5 >= scrollHeight && e.deltaY > 0)
     ) {
       e.preventDefault();
     }
@@ -21,7 +21,8 @@ modalContents.addEventListener(
   { passive: false }
 );
 
-const calcmodal = `<p>로스트아크 거래소 API의 응답 내용을 기반으로 DB ERD 설계</p>
+const modalText = [
+  `<p>로스트아크 거래소 API의 응답 내용을 기반으로 DB ERD 설계</p>
 <div class="modal-img-content flex center">
   <img src="./img/project/modal/calc/res.png" alt="" />
   <img src="./img/project/modal/calc/erd.png" alt="" />
@@ -87,36 +88,91 @@ const marketApiUpdate = async (item: Item) => {
     await this.marketRepository.upsert(market, []);
   } catch (err) {} // 값이 변경되지 않은 상태에서 업데이트를 시도하면 오류가 발생할 수 있으므로, catch를 사용해 서버 중단을 방지
 };</code>
-</pre>`;
+</pre>`,
+  `<p>
+포인트 히스토리 및 택배기사 실시간 위치를 저장하기 위해 멀티
+데이터베이스로 mongoDB를 추가로 사용
+</p>
+<pre><code>
+app.set("url", process.env.MONGURL || "mongodb://localhost:27017");
+mongoose.connect(app.get("url"), {
+dbName: "hamster",
+}); // MongoDB연결을 위한 코드</code></pre>
+<p>
+이메일(ID로도 사용)찾기 기능을 위해 이메일에 양방향 암호화를 적용
+</p>
+<pre><code class="language-typescript">const key: Buffer = crypto.scryptSync("hgaomasttmexrj", &#96;&#36;{process.env.KEY || ""}&#96;, 32);
+const iv: Buffer = Buffer.from(&#96;&#36;{process.env.IV}&#96;, "base64");
+const cipher: crypto.CipherGCM = crypto.createCipheriv("aes-256-gcm", key, iv);
 
-// modal창 열리면 내부에서만 터치이동 가능하게
-// modalContents.addEventListener(
-//   "touchmove",
-//   (e) => {
-//     e.stopPropagation();
-//     const { scrollTop, scrollHeight, clientHeight } = modalContents;
-//     const deltaY =
-//       e.touches[0].clientY - (e.target._lastY || e.touches[0].clientY);
-//     e.target._lastY = e.touches[0].clientY;
+const encryptionemail: string = cipher.update(&#96;&#36;{reqbody.email}&#96;, "utf-8", "hex"); // AES를 사용하여 이메일(ID로도 사용)을 양방향으로 암호화하기 위한 코드
+</code></pre>
+<p>비밀번호 암호화를 위해 단방향 암호화를 적용</p>
+<pre><code>const encryptionpw: string = crypto
+.createHash("sha512")
+.update(&#96;&#36;{reqbody.pw + process.env.SALT}&#96;)
+.digest("hex");// 비밀번호 단방향 암호화를 위한 코드
+</code></pre>
+<p>구글로그인을 위해 필요한 코드 작성</p>
+<pre><code class="language-typescript">
+// 구글 인증 서버 요청에 필요한 정보를 생성하는 코드
+const params: URLSearchParams = new URLSearchParams();
+params.append("code", code);
+params.append("client_id", client_id);
+params.append("client_secret", client_secret);
+params.append("redirect_uri", redirectUrl);
+params.append("grant_type", "authorization_code");
 
-//     console.log(e.cancelable);
 
-//     if (
-//       (scrollTop <= 0 && deltaY > 0) ||
-//       (scrollTop + clientHeight >= scrollHeight && deltaY < 0)
-//     ) {
-//       // e.preventDefault();
-//       if (e.cancelable) {
-//         e.preventDefault();
-//       }
-//     }
-//   },
-//   { passive: false }
-// );
+// 구글 인증서버에서 accessToken을 받기위한 코드
+const response = await axios.post(tokenEndpoint, params, {
+headers: {
+  "Content-Type": "application/x-www-form-urlencoded",
+},
+});
+const accessToken = response.data.access_token;
 
-coreCode.forEach((e) => {
+// 구글에 사용자 정보를 요청하는 코드
+const userInfoResponse = await (
+await axios.get("https://www.googleapis.com/oauth2/v1/userinfo", {
+  headers: {
+  Authorization: &#96;Bearer &#36;{accessToken}&#96;,
+  },
+})
+).data;
+</code></pre>
+<p>네이버 로그인을 위해 필요한 코드 작성</p>
+<pre><code class="language-typescript">
+// 네이버 인증서버에서 accessToken을 받기위한 코드
+const response = await axios.post(tokenEndpoint, null, {
+params: {
+  grant_type: "authorization_code",
+  client_id: client_id,
+  client_secret: client_secret,
+  redirect_uri: redirectUrl,
+  code: code,
+  state: state,
+},
+headers: {
+  "Content-Type": "application/x-www-form-urlencoded",
+},
+});
+const accessToken = response.data.access_token;
+
+// 네이버에 사용자 정보를 요청하는 코드
+const userInfoResponse = await (
+  await axios.get("https://openapi.naver.com/v1/nid/me", {
+    headers: {
+      Authorization: &#96;Bearer &#36;{accessToken}&#96;,
+    },
+  })
+).data.response;
+</code></pre>`,
+];
+
+coreCode.forEach((e, idx) => {
   e.onclick = () => {
-    modalContents.innerHTML = calcmodal;
+    modalContents.innerHTML = modalText[idx];
     modal.classList.add("flex");
     modal.classList.remove("none");
     disableScroll();
@@ -126,6 +182,7 @@ coreCode.forEach((e) => {
 
 modalExit.forEach((e) => {
   e.onclick = () => {
+    modalContents.scrollTop = 0;
     modalContents.innerHTML = "";
     modal.classList.remove("flex");
     modal.classList.add("none");
