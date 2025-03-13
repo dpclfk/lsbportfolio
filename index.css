@@ -162,6 +162,16 @@ img {
   padding-left: 0.5rem;
 }
 
+.new-modal-img-content {
+  position: relative;
+  width: 60%;
+  padding-left: 0.5rem;
+}
+.new-modal-img-content img {
+  width: 100%;
+  padding-left: 0.5rem;
+}
+
 #modal-contents P {
   width: 100%;
   padding-top: 0.5rem;

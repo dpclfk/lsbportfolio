@@ -22,11 +22,17 @@ modalContents.addEventListener(
 );
 
 const modalText = [
-  `<p>로스트아크 거래소 API의 응답 내용을 기반으로 DB ERD 설계</p>
+  `<p>로스트아크 거래소 API의 응답 내용을 기반으로 요청시 저장할 DB ERD 설계</p>
 <div class="modal-img-content flex center">
   <img src="./img/project/modal/calc/res.png" alt="" />
-  <img src="./img/project/modal/calc/erd.png" alt="" />
+  <img src="./img/project/modal/calc/marketERD.png" alt="" />
 </div>
+<p>
+  응답 ERD를 기반으로 프로젝트에 필요한 DB의 전체적인 ERD 완성
+</p>
+  <div class="modal-img-content flex center">
+    <img src="./img/project/modal/calc/DBERD.jpg" alt="" />
+  </div>
 <p>
   로스트아크 거래소 API의 요청 방식을 따라 Body에 정보를 포함하여 요청
 </p>
@@ -88,7 +94,8 @@ const marketApiUpdate = async (item: Item) => {
     await this.marketRepository.upsert(market, []);
   } catch (err) {} // 값이 변경되지 않은 상태에서 업데이트를 시도하면 오류가 발생할 수 있으므로, catch를 사용해 서버 중단을 방지
 };</code>
-</pre>`,
+</pre>
+`,
   `<p>
 포인트 히스토리 및 택배기사 실시간 위치를 저장하기 위해 멀티
 데이터베이스로 mongoDB를 추가로 사용
@@ -98,6 +105,12 @@ app.set("url", process.env.MONGURL || "mongodb://localhost:27017");
 mongoose.connect(app.get("url"), {
 dbName: "hamster",
 }); // MongoDB연결을 위한 코드</code></pre>
+<p>
+  DB ERD 구축
+</p>
+  <div class="new-modal-img-content flex center">
+    <img src="./img/project/modal/market/DBERD.jpg" alt="" />
+  </div>
 <p>
 이메일(ID로도 사용)찾기 기능을 위해 이메일에 양방향 암호화를 적용
 </p>
@@ -170,6 +183,13 @@ const userInfoResponse = await (
 </code>
 </pre>`,
   `
+<p>
+  DB ERD 구축
+</p>
+  <div class="new-modal-img-content flex center">
+    <img src="./img/project/modal/clone/DBERD.jpg" alt="" />
+  </div>
+<p>
 <p>Sequelize를 사용하여 데이터베이스에 연결</p>
 <pre><code class="language-javascript">export const sequelize = new Sequelize(
   config.database,
@@ -185,7 +205,7 @@ export const BoardLike = BoardLikeModel.init(sequelize);
 export const BoardDislike = BoardDislikeModel.init(sequelize);
 export const Comment = CommentModel.init(sequelize);
  </code></pre>
-<p>테이블에서 관계를 맺기위한 코드</p>
+<p>테이블에서 관계를 자동으로 맺기위한 코드</p>
 <pre><code>
 const db = {
   Board,
