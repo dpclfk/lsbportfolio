@@ -49,6 +49,9 @@ img {
 .pb-80 {
   padding-bottom: 10rem;
 }
+.pl-4 {
+  padding-left: 0.25rem;
+}
 
 .flex {
   display: flex;
@@ -164,7 +167,7 @@ img {
 
 .new-modal-img-content {
   position: relative;
-  width: 60%;
+  max-width: 90%;
   padding-left: 0.5rem;
 }
 .new-modal-img-content img {
@@ -172,10 +175,15 @@ img {
   padding-left: 0.5rem;
 }
 
+.font-20 {
+  font-size: 1.25rem;
+}
+.font-18 {
+  font-size: 1.1rem;
+}
+
 #modal-contents P {
   width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 
 #gnb {

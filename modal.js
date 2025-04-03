@@ -22,25 +22,35 @@ modalContents.addEventListener(
 );
 
 const modalText = [
-  `<p>로스트아크 거래소 API의 응답 내용을 기반으로 요청시 저장할 DB ERD 설계</p>
+  `<p class="font-20 pb-8">로스트아크 거래소 API의 응답 내용을 기반으로 요청시 저장할 DB ERD 설계</p>
 <div class="modal-img-content flex center">
   <img src="./img/project/modal/calc/res.png" alt="" />
   <img src="./img/project/modal/calc/marketERD.png" alt="" />
 </div>
-<p>
+<p class="font-20 pt-16 pb-8">
   응답 ERD를 기반으로 프로젝트에 필요한 DB의 전체적인 ERD 완성
 </p>
-  <div class="modal-img-content flex center">
-    <img src="./img/project/modal/calc/DBERD.jpg" alt="" />
-  </div>
-<p>
+<div class="modal-img-content flex center">
+  <img src="./img/project/modal/calc/DBERD.jpg" alt="calc-DBERD" />
+</div>
+<p class="font-20 pt-16 pb-8">
+  백엔드와 프론트엔드의 플로우차트를 그려 프로세스 흐름을 시각화하여 표현
+</p>
+<p class="font-18 pl-4 pb-8">Back-End Flowchart</p>
+<div class="new-modal-img-content flex center">
+  <img src="./img/project/modal/calc/flowchart-back.jpg" alt="calc-flowchart-back" />
+</div>
+<p class="font-18 pt-8 pl-4 pb-8">Front-End Flowchart</p>
+<div class="new-modal-img-content flex center">
+  <img src="./img/project/modal/calc/flowchart-front.jpg" alt="calc-flowchart-front" />
+</div>
+<p class="font-20 pt-16 pb-8">
   로스트아크 거래소 API의 요청 방식을 따라 Body에 정보를 포함하여 요청
 </p>
 <div class="modal-img-content flex center">
   <img src="./img/project/modal/calc/req.png" alt="" />
 </div>
-<pre><code class="language-typescript">
-const lostLink = axios.create({
+<pre><code class="language-typescript">const lostLink = axios.create({
   baseURL: 'https://developer-lostark.game.onstove.com/',
   headers: {
     'Content-Type': 'application/json',
@@ -66,9 +76,8 @@ const reqApi = await lostLink.post( // 거래소에서 최신 정보를 가져�
 reqApi.data.Items.map(
   (item: Item) => marketApiUpdate(item),
 ); // API 정보를 DB에 저장하는 함수를 호출</code></pre>
-<p>응답 데이터를 DB에 저장</p>
-<pre><code class="language-typescript">
-const marketApiUpdate = async (item: Item) => {
+<p class="font-20 pt-16">응답 데이터를 DB에 저장</p>
+<pre><code class="language-typescript">const marketApiUpdate = async (item: Item) => {
   let icon: Icon = this.iconRepository.create({ // 아이콘 이미지는 별도로 호출하는 경우가 많아 다른 테이블에 저장
     icon: item.Icon.slice(
       'https://cdn-lostark.game.onstove.com/efui_iconatlas/'.length,
@@ -96,22 +105,29 @@ const marketApiUpdate = async (item: Item) => {
 };</code>
 </pre>
 `,
-  `<p>
-포인트 히스토리 및 택배기사 실시간 위치를 저장하기 위해 멀티
-데이터베이스로 mongoDB를 추가로 사용
-</p>
-<pre><code>
-app.set("url", process.env.MONGURL || "mongodb://localhost:27017");
-mongoose.connect(app.get("url"), {
-dbName: "hamster",
-}); // MongoDB연결을 위한 코드</code></pre>
-<p>
+  `
+<p class="font-20 pb-8">
   DB ERD 구축
 </p>
-  <div class="new-modal-img-content flex center">
-    <img src="./img/project/modal/market/DBERD.jpg" alt="" />
-  </div>
-<p>
+<div class="new-modal-img-content flex center">
+  <img src="./img/project/modal/market/DBERD.jpg" alt="" />
+</div>
+<p class="font-20 pt-16 pb-8">
+  백엔드의 플로우차트를 그려 프로세스 흐름을 시각화하여 표현
+</p>
+<p class="font-18 pl-4 pb-8">메인페이지 관련 플로우차트</p>
+<div class="new-modal-img-content flex center">
+  <img src="./img/project/modal/market/flowchart-main.jpg" alt="market-flowchart-main" />
+</div>
+<p class="font-18 pt-8 pl-4 pb-8 pb-8">로그인 및 글쓰기 관련 플로우차트</p>
+<div class="new-modal-img-content flex center">
+  <img src="./img/project/modal/market/flowchart-write.jpg" alt="market-flowchart-write" />
+</div>
+<p class="font-18 pt-8 pl-4 pb-8">어드민 및 배송기사 관련 플로우차트</p>
+<div class="new-modal-img-content flex center">
+  <img src="./img/project/modal/market/flowchart-admin.jpg" alt="market-flowchart-admin" />
+</div>
+<p class="font-20 pt-16">
 이메일(ID로도 사용)찾기 기능을 위해 이메일에 양방향 암호화를 적용
 </p>
 <pre><code class="language-typescript">const key: Buffer = crypto.scryptSync("hgaomasttmexrj", &#96;&#36;{process.env.KEY || ""}&#96;, 32);
@@ -120,15 +136,14 @@ const cipher: crypto.CipherGCM = crypto.createCipheriv("aes-256-gcm", key, iv);
 
 const encryptionemail: string = cipher.update(&#96;&#36;{reqbody.email}&#96;, "utf-8", "hex"); // AES를 사용하여 이메일(ID로도 사용)을 양방향으로 암호화하기 위한 코드
 </code></pre>
-<p>비밀번호 암호화를 위해 단방향 암호화를 적용</p>
+<p class="font-20 pt-16">비밀번호 암호화를 위해 단방향 암호화를 적용</p>
 <pre><code>const encryptionpw: string = crypto
 .createHash("sha512")
 .update(&#96;&#36;{reqbody.pw + process.env.SALT}&#96;)
 .digest("hex");// 비밀번호 단방향 암호화를 위한 코드
 </code></pre>
-<p>구글로그인을 위해 필요한 코드 작성</p>
-<pre><code class="language-typescript">
-// 구글 인증 서버 요청에 필요한 정보를 생성하는 코드
+<p class="font-20 pt-16">구글로그인을 위해 필요한 코드 작성</p>
+<pre><code class="language-typescript">// 구글 인증 서버 요청에 필요한 정보를 생성하는 코드
 const params: URLSearchParams = new URLSearchParams();
 params.append("code", code);
 params.append("client_id", client_id);
@@ -154,9 +169,8 @@ await axios.get("https://www.googleapis.com/oauth2/v1/userinfo", {
 })
 ).data;
 </code></pre>
-<p>네이버 로그인을 위해 필요한 코드 작성</p>
-<pre><code class="language-typescript">
-// 네이버 인증서버에서 accessToken을 받기위한 코드
+<p class="font-20 pt-16">네이버 로그인을 위해 필요한 코드 작성</p>
+<pre><code class="language-typescript">// 네이버 인증서버에서 accessToken을 받기위한 코드
 const response = await axios.post(tokenEndpoint, null, {
 params: {
   grant_type: "authorization_code",
@@ -183,14 +197,13 @@ const userInfoResponse = await (
 </code>
 </pre>`,
   `
-<p>
+<p class="font-20 pb-8">
   DB ERD 구축
 </p>
   <div class="new-modal-img-content flex center">
     <img src="./img/project/modal/clone/DBERD.jpg" alt="" />
   </div>
-<p>
-<p>Sequelize를 사용하여 데이터베이스에 연결</p>
+<p class="font-20 pt-16">Sequelize를 사용하여 데이터베이스에 연결</p>
 <pre><code class="language-javascript">export const sequelize = new Sequelize(
   config.database,
   config.username,
@@ -198,22 +211,19 @@ const userInfoResponse = await (
   config
 );
  </code></pre>
-<p>Sequelize를 사용하여 데이터베이스 테이블 생성</p>
-<pre><code>
-export const Board = BoardModel.init(sequelize);
+<p class="font-20 pt-16">Sequelize를 사용하여 데이터베이스 테이블 생성</p>
+<pre><code>export const Board = BoardModel.init(sequelize);
 export const BoardLike = BoardLikeModel.init(sequelize);
 export const BoardDislike = BoardDislikeModel.init(sequelize);
 export const Comment = CommentModel.init(sequelize);
  </code></pre>
-<p>테이블에서 관계를 자동으로 맺기위한 코드</p>
-<pre><code>
-const db = {
+<p class="font-20 pt-16">테이블에서 관계를 자동으로 맺기위한 코드</p>
+<pre><code>const db = {
   Board,
   BoardLike,
   BoardDislike,
   Comment,
 };
-
 
 Object.keys(db).forEach((model) => {
   db[model].associate(db);
@@ -222,9 +232,8 @@ Object.keys(db).forEach((model) => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
  </code></pre>
-<p>각 테이블 별 관계를 맺기위한 코드</p>
-<pre><code>
-static associate({ User, Board, Category, BoardLike, Comment, BoardDislike, Channel }) {
+<p class="font-20 pt-16">각 테이블 별 관계를 맺기위한 코드</p>
+<pre><code>static associate({ User, Board, Category, BoardLike, Comment, BoardDislike, Channel }) {
   Board.hasMany(BoardLike, { foreignKey: "boardId" });
   Board.hasMany(BoardDislike, { foreignKey: "boardId" });
   Board.hasMany(Comment, { foreignKey: "boardId" });
