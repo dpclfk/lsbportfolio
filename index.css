@@ -53,6 +53,10 @@ img {
   padding-left: 0.25rem;
 }
 
+.line-height-1 {
+  line-height: 1.25;
+}
+
 .flex {
   display: flex;
 }
@@ -367,6 +371,10 @@ img {
 
 .pl-2rem {
   padding-left: 2rem;
+}
+
+.ul-pl {
+  padding-left: 1.5rem;
 }
 
 #circle-1-color {
