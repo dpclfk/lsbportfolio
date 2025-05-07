@@ -127,6 +127,12 @@ reqApi.data.Items.map(
 <div class="new-modal-img-content flex center">
   <img src="./img/project/modal/market/flowchart-admin.jpg" alt="market-flowchart-admin" />
 </div>
+<p class="font-18 pt-8 pl-4 pb-8">각 데이터의 움직임을 표현하기 위한 시퀀스 다이어그램(클릭시 draw.io 페이지로 이동)</p>
+<div class="new-modal-img-content flex center">
+  <a href="https://app.diagrams.net/#G1uyv14P4ievsvGNsUTJWnUhFWd7doYC4_#%7B%22pageId%22%3A%22NWUtv_SiQupVRRRp2jGZ%22%7D" target="_blank" rel="noopener noreferrer">
+    <img src="./img/project/modal/market/sequence.jpg" alt="sequence" />
+  </a>
+</div>
 <p class="font-20 pt-16">
 이메일(ID로도 사용)찾기 기능을 위해 이메일에 양방향 암호화를 적용
 </p>
