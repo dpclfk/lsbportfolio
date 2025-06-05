@@ -11,6 +11,7 @@ const gitHub = document.querySelectorAll(
   ".project-doc-icons > img:first-child"
 );
 const apiDocs = document.querySelectorAll(".api-docs");
+const notion = document.querySelectorAll(".notion");
 
 // 로고 클릭시 새로고침
 const sitetile = document.getElementById("gnb1");
@@ -92,6 +93,7 @@ projectImg.forEach((e, idx) => {
 
 //깃허브 클릭시 깃허브 페이지로 이동
 const gitHubURI = [
+  "https://github.com/dpclfk/LostarkMarketLog",
   "https://github.com/dpclfk/lostarkcalc",
   "https://github.com/dpclfk/TeamHamster",
   "https://github.com/dpclfk/mayteamproject/tree/dev",
@@ -103,7 +105,10 @@ gitHub.forEach((e, idx) => {
 });
 
 // api 명세서(문서)페이지로 이동
-const ApiURI = ["https://lostarkcalc.dpclfk.com/apidocs"];
+const ApiURI = [
+  "https://lostarkmarketlog.dpclfk.com/apidocs",
+  "https://lostarkcalc.dpclfk.com/apidocs",
+];
 
 apiDocs.forEach((e, idx) => {
   e.onclick = () => {
@@ -111,6 +116,16 @@ apiDocs.forEach((e, idx) => {
   };
 });
 
+// api 명세서(문서)페이지로 이동
+const notionURI = [
+  "https://www.notion.so/Lostark-Market-Log-1de59c7e40ad80509501c9d6d5adfdf3?source=copy_link",
+];
+
+notion.forEach((e, idx) => {
+  e.onclick = () => {
+    window.open(notionURI[idx]);
+  };
+});
 // 햄버거버튼 클릭 이벤트
 Hamburger.onclick = (e) => {
   e.currentTarget.classList.toggle("active");

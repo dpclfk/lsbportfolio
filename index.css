@@ -730,6 +730,32 @@ img {
   height: 1.25rem;
 }
 
+.notion {
+  padding-top: 0.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.notion > div {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+  background-color: #a0a6a38d;
+  color: #4c5666;
+  font-weight: 600;
+}
+
+.notion > div:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.notion-img {
+  height: 1.25rem;
+}
+
 .project-contents-list {
   list-style: none;
   width: 50%;
