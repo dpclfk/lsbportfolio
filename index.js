@@ -81,6 +81,7 @@ allImg.forEach((e) => {
 
 // 이미지 클릭시 프로젝트 페이지로 이동
 const projectURI = [
+  "https://lostarkmarketlog.dpclfk.com/",
   "https://lostarkcalc.dpclfk.com/",
   "https://market.dpclfk.com/",
   "https://arcaclone.dpclfk.com/",
