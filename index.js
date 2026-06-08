@@ -112,16 +112,17 @@ gitHub.forEach((e, idx) => {
 });
 
 // api 명세서(문서)페이지로 이동
-const ApiURI = [
-  "https://lostarkmarketlog.dpclfk.com/apidocs",
-  "https://lostarkcalc.dpclfk.com/apidocs",
-];
+// 사이트 폐쇄로 링크 삭제
+// const ApiURI = [
+//   "https://lostarkmarketlog.dpclfk.com/apidocs",
+//   "https://lostarkcalc.dpclfk.com/apidocs",
+// ];
 
-apiDocs.forEach((e, idx) => {
-  e.onclick = () => {
-    window.open(ApiURI[idx]);
-  };
-});
+// apiDocs.forEach((e, idx) => {
+//   e.onclick = () => {
+//     window.open(ApiURI[idx]);
+//   };
+// });
 
 // api 명세서(문서)페이지로 이동
 const notionURI = [
