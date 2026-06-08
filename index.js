@@ -8,7 +8,7 @@ const op0 = document.querySelectorAll(".op-0");
 const Hamburger = document.querySelector(".Hamburger");
 const HamburgerGnb = document.querySelector("#gnb2");
 const gitHub = document.querySelectorAll(
-  ".project-doc-icons > img:first-child"
+  ".project-doc-icons > img:first-child",
 );
 const apiDocs = document.querySelectorAll(".api-docs");
 const notion = document.querySelectorAll(".notion");
@@ -47,7 +47,7 @@ const observer = new IntersectionObserver(
   },
   {
     threshold: 0.01,
-  }
+  },
 );
 
 // x번째 클릭시 x번째 옵저버로 이동
@@ -80,12 +80,18 @@ allImg.forEach((e) => {
 });
 
 // 이미지 클릭시 프로젝트 페이지로 이동
+// 비용문제로 인해 깃허브 링크로 대체
+// "https://lostarkmarketlog.dpclfk.com/",
+// "https://lostarkcalc.dpclfk.com/",
+// "https://market.dpclfk.com/",
+// "https://arcaclone.dpclfk.com/",
 const projectURI = [
-  "https://lostarkmarketlog.dpclfk.com/",
-  "https://lostarkcalc.dpclfk.com/",
-  "https://market.dpclfk.com/",
-  "https://arcaclone.dpclfk.com/",
+  "https://github.com/dpclfk/LostarkMarketLog",
+  "https://github.com/dpclfk/lostarkcalc",
+  "https://github.com/dpclfk/TeamHamster",
+  "https://github.com/dpclfk/mayteamproject/tree/dev",
 ];
+
 projectImg.forEach((e, idx) => {
   e.onclick = () => {
     window.open(projectURI[idx]);
