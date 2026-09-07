@@ -80,16 +80,11 @@ allImg.forEach((e) => {
 });
 
 // 이미지 클릭시 프로젝트 페이지로 이동
-// 비용문제로 인해 깃허브 링크로 대체
-// "https://lostarkmarketlog.dpclfk.com/",
-// "https://lostarkcalc.dpclfk.com/",
-// "https://market.dpclfk.com/",
-// "https://arcaclone.dpclfk.com/",
 const projectURI = [
-  "https://github.com/dpclfk/LostarkMarketLog",
-  "https://github.com/dpclfk/lostarkcalc",
-  "https://github.com/dpclfk/TeamHamster",
-  "https://github.com/dpclfk/mayteamproject/tree/dev",
+  "https://loa-market-log.akdfid.kr/",
+  "https://loa-calc.akdfid.kr/",
+  "https://hamster-market.akdfid.kr/",
+  "https://arca-clone.akdfid.kr/",
 ];
 
 projectImg.forEach((e, idx) => {
@@ -112,17 +107,16 @@ gitHub.forEach((e, idx) => {
 });
 
 // api 명세서(문서)페이지로 이동
-// 사이트 폐쇄로 링크 삭제
-// const ApiURI = [
-//   "https://lostarkmarketlog.dpclfk.com/apidocs",
-//   "https://lostarkcalc.dpclfk.com/apidocs",
-// ];
+const ApiURI = [
+  "https://loa-market-log.akdfid.kr/apidocs",
+  "https://loa-calc.akdfid.kr/apidocs",
+];
 
-// apiDocs.forEach((e, idx) => {
-//   e.onclick = () => {
-//     window.open(ApiURI[idx]);
-//   };
-// });
+apiDocs.forEach((e, idx) => {
+  e.onclick = () => {
+    window.open(ApiURI[idx]);
+  };
+});
 
 // api 명세서(문서)페이지로 이동
 const notionURI = [

@@ -292,8 +292,10 @@ img {
   transform: rotate(15deg);
   border: 0.0625rem solid #efefef;
   box-shadow: 0.3125rem 0.1875rem 2.3125rem -0.9375rem rgba(100, 97, 97, 0.8);
-  -webkit-box-shadow: 0.3125rem 0.1875rem 2.3125rem -0.9375rem rgba(100, 97, 97, 0.8);
-  -moz-box-shadow: 0.3125rem 0.1875rem 2.3125rem -0.9375rem rgba(100, 97, 97, 0.8);
+  -webkit-box-shadow: 0.3125rem 0.1875rem 2.3125rem -0.9375rem
+    rgba(100, 97, 97, 0.8);
+  -moz-box-shadow: 0.3125rem 0.1875rem 2.3125rem -0.9375rem
+    rgba(100, 97, 97, 0.8);
   z-index: 2;
 }
 
@@ -614,6 +616,7 @@ img {
 
 #about-github:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .pb-1rem {
@@ -805,7 +808,8 @@ img {
     rgba(242, 247, 252, 1) 100%
   );
   box-shadow: 3.125rem 1.9375rem 5.3125rem -2.3125rem rgba(0, 0, 0, 0.37);
-  -webkit-box-shadow: 3.125rem 1.9375rem 5.3125rem -2.3125rem rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow: 3.125rem 1.9375rem 5.3125rem -2.3125rem
+    rgba(0, 0, 0, 0.37);
   -moz-box-shadow: 3.125rem 1.9375rem 5.3125rem -2.3125rem rgba(0, 0, 0, 0.37);
 }
 
@@ -1018,7 +1022,9 @@ img {
   }
 
   .Hamburger span {
-    transition: transform 0.3s, opacity 0.3s;
+    transition:
+      transform 0.3s,
+      opacity 0.3s;
   }
 
   #gnb2.show {
